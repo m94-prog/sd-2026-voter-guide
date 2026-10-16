@@ -284,6 +284,27 @@ body.scroll-locked{position:fixed;left:0;right:0;width:100%;overflow:hidden}
 .no-posts{margin:4px 0}
 .cards > .pcard:only-child{grid-column:1/-1;max-width:560px}
 
+/* Both sides (ballot measures): neutral colors, not party colors */
+.bs-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:8px 0 12px}
+.bs-col{border:1px solid var(--line);border-radius:12px;padding:10px 12px;min-width:0;background:#fff}
+.bs-yes{border-top:5px solid #0f766e;background:#f3faf9}
+.bs-no{border-top:5px solid #a16207;background:#fdf8ee}
+.bs-h{margin:0 0 4px;font-size:1rem;letter-spacing:.02em;text-transform:uppercase}
+.bs-yes .bs-h{color:#0f766e}.bs-no .bs-h{color:#854d0e}
+.bs-whoall{margin:0 0 4px;font-size:.84rem;font-weight:600}
+.bs-org{margin:0 0 6px;font-size:.82rem;color:var(--muted)}
+.bs-who{color:var(--muted);font-size:.84rem}
+ol.bs-list,ul.bs-list{margin:4px 0;padding-left:20px}
+.bs-list li{margin:6px 0;overflow-wrap:anywhere}
+.bs-list li.flag-thin,.bs-list li.flag-unverified{border-radius:6px;padding:2px 4px}
+.bs-none{margin:6px 0;padding:8px 10px;background:#f4f4f5;border-radius:8px;font-size:.9rem}
+.bs-watch{border-left:4px solid #64748b;padding-left:10px}
+.bs-src{font-size:.84rem;overflow-wrap:anywhere}
+.bs-jump{margin:6px 0 10px}
+@media (max-width:720px){.bs-grid{grid-template-columns:1fr}}
+.bs-list li.flag-thin{box-shadow:inset 3px 0 0 #f59e0b;padding-left:8px}
+.bs-list li.flag-unverified{box-shadow:inset 3px 0 0 #dc2626;padding-left:8px}
+
 </style>
 </head>
 <body>
@@ -322,6 +343,14 @@ body.scroll-locked{position:fixed;left:0;right:0;width:100%;overflow:hidden}
 #static-guide .sg-why{display:block;font-size:13px;color:#6b7280}
 #static-guide ol.sg-src{font-size:13px;padding-left:22px;word-break:break-word}
 #static-guide details summary{cursor:pointer;color:#1d4ed8;font-weight:600}
+#static-guide .sg-bs{background:#f9fafb;border:1px solid #e5e7eb;border-radius:10px;padding:8px 10px;margin:8px 0 4px}
+#static-guide .sg-bs-grid{display:flex;flex-wrap:wrap;gap:8px}
+#static-guide .sg-bs-grid>div{flex:1 1 260px;min-width:0;border-radius:8px;padding:6px 8px;background:#fff}
+#static-guide .sg-yes{border-top:4px solid #0f766e}#static-guide .sg-no{border-top:4px solid #a16207}
+#static-guide .sg-yes>b{color:#0f766e}#static-guide .sg-no>b{color:#854d0e}
+#static-guide .sg-bs ul,#static-guide .sg-bs ol{margin:4px 0;padding-left:18px;font-size:14px}
+#static-guide .sg-bs li{margin:3px 0;overflow-wrap:anywhere}
+#static-guide .sg-bs .sg-w{font-size:14px;margin:6px 0 0}
 #static-guide nav.sg-toc a{display:inline-block;margin:2px 10px 2px 0}
 @media print{#static-guide{background:#fff}#static-guide .sg-card{break-inside:auto;border:0;padding:6px 0;margin:6px 0}#static-guide h2,#static-guide h3{break-after:avoid}#static-guide .sg-cand{break-inside:avoid}}
 </style>
@@ -755,10 +784,10 @@ body.scroll-locked{position:fixed;left:0;right:0;width:100%;overflow:hidden}
 <p class="sg-row"><span class="sg-who D">Arne:</span> Sioux Falls Simplified guide, Oct. 2 <sup><a href="https://www.sfsimplified.com/meet-the-dist-12-folks-who-want-to-represent-you-in-pierre/" title="Sioux Falls Simplified, District 12 voter guide, Oct. 2, 2026">[3]</a></sup>.</p>
 <details><summary>Sources (19)</summary><ol class="sg-src"><li><a href="https://vip.sdsos.gov/candidatelist.aspx?eid=774">SD Secretary of State, 2026 general election candidate list</a></li><li><a href="https://www.lincolncountysd.gov/DocumentCenter/View/1989/Sample-Ballot-2026-PDF">Lincoln County 2026 general election publication (sample) ballot</a></li><li><a href="https://www.sfsimplified.com/meet-the-dist-12-folks-who-want-to-represent-you-in-pierre/">Sioux Falls Simplified, District 12 voter guide, Oct. 2, 2026</a></li><li><a href="https://www.sdpb.org/2026-08-31/meet-the-candidates-amber-arlint">SDPB, Meet the candidates: Amber Arlint</a></li><li><a href="https://www.sdpb.org/2026-08-31/meet-the-candidates-kerry-loudenslager">SDPB, Meet the candidates: Kerry Loudenslager</a></li><li><a href="https://www.sdpb.org/2026-08-31/meet-the-candidates-stephanie-arne">SDPB, Meet the candidates: Stephanie Arne</a></li><li><a href="https://www.kerryforsd.com/">Kerry Loudenslager campaign site</a></li><li><a href="https://www.stephanieforsd.com/">Stephanie Arne campaign site</a></li><li><a href="https://sdlegislature.gov/api/SessionMembers/Detail/4732">SD Legislature member record, Amber Arlint (2026)</a></li><li><a href="https://sdlegislature.gov/Session/Bill/27029">SD Legislature: HB 1244 (2026), Jobs for America&#x27;s Graduates grant</a></li><li><a href="https://sdlegislature.gov/Session/Bill/25458">SD Legislature: SB 106 (2025), petition sponsors must be registered voters</a></li><li><a href="https://sdlegislature.gov/Session/Bill/27028">SD Legislature: SB 135 (2026), data center utility-cost protections</a></li><li><a href="https://sdlegislature.gov/Session/Bill/25683">SD Legislature: HJR 5001 (2025), became Amendment I</a></li><li><a href="https://sdlegislature.gov/Session/Bill/25856">SD Legislature: SJR 503 (2025), became Amendment J</a></li><li><a href="https://sdlegislature.gov/Session/Bill/25479">SD Legislature: SJR 505 (2025), became Amendment K</a></li><li><a href="https://sdlegislature.gov/Session/Bill/25663">SD Legislature: HJR 5003 (2025), became Amendment L</a></li><li><a href="https://ballotpedia.org/South_Dakota_House_of_Representatives_District_12">Ballotpedia: SD House District 12</a></li><li><a href="https://sdcfr.sdsos.gov/">SD Secretary of State campaign finance search</a></li><li><a href="https://sdlegislature.gov/Session/Bill/24967">SD Legislature: SB 175 (2024), domestic abuse shelters as community safety zones</a></li></ol></details></section>
 <section class="sg-card" id="sg-amend"><h2>Constitutional Amendments I–L</h2><p class="sg-muted">Summaries from the Attorney General's ballot explanations and news coverage. Read the official ballot wording before voting.</p>
-<h3>Amendment I: Medicaid expansion trigger</h3><p><b>A “Yes” vote:</b> Adds a condition: the expansion requirement applies only while the federal share stays at 90% or more. Disputed effect: AG Jackley's explanation says expansion ends automatically below 90%; sponsor Rep. Mortenson (R) and Lt. Gov. Venhuizen say the decision goes back to lawmakers <sup><a href="https://kfgo.com/2026/09/18/sd-ballot-measure-could-auto-repeal-medicaid-expansion-attorney-general-says-in-contrast-to-lawmakers/" title="KFGO/Searchlight, Amendment I dispute, Sept. 18, 2026">[3]</a><a href="https://southdakotasearchlight.com/2026/10/14/podcast-pros-and-cons-on-a-ballot-question-that-could-repeal-sds-medicaid-expansion-requirement/" title="SD Searchlight podcast, Amendment I pros/cons, Oct. 14, 2026">[4]</a></sup>.<span class="sg-ev sg-thin">◐ Thin evidence</span><span class="sg-why">Effect is disputed: The AG&#x27;s official explanation and the legislative sponsors disagree on whether expansion ends automatically. Both views are on record; no court ruling.</span></p><p><b>A “No” vote:</b> Expanded Medicaid stays in the constitution without this trigger <sup><a href="https://www.sdpb.org/politics/2026-05-20/ag-releases-final-ballot-explanations-for-2026-constitutional-amendments" title="SDPB, AG final ballot explanations, May 20, 2026">[1]</a><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Election%20Assets/Election%20Information/FINALAPPROVEDBallot%20Questions%20Handout%20Print.pdf" title="SD SOS 2026 ballot question pamphlet">[2]</a></sup>.</p><p><b>Candidates:</b> Rhoden defended it; Ahlers opposes ("a cop out"); Jackley wrote ballot explanation, no personal position; Rounds, Bengs, Gronli: Not found <sup><a href="https://www.dakotanewsnow.com/2026/09/07/rhoden-ahlers-debate-south-dakotas-success-agriculture/" title="Dakota News Now, governor debate, Sept. 7, 2026">[5]</a></sup>.</p>
-<h3>Amendment J: Citizenship and voting</h3><p><b>A “Yes” vote:</b> States in the constitution that noncitizens cannot vote <sup><a href="https://www.sdpb.org/politics/2026-05-20/ag-releases-final-ballot-explanations-for-2026-constitutional-amendments" title="SDPB, AG final ballot explanations, May 20, 2026">[1]</a><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Election%20Assets/Election%20Information/FINALAPPROVEDBallot%20Questions%20Handout%20Print.pdf" title="SD SOS 2026 ballot question pamphlet">[2]</a></sup>.</p><p><b>A “No” vote:</b> Constitution's voting language unchanged <sup><a href="https://www.sdpb.org/politics/2026-05-20/ag-releases-final-ballot-explanations-for-2026-constitutional-amendments" title="SDPB, AG final ballot explanations, May 20, 2026">[1]</a><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Election%20Assets/Election%20Information/FINALAPPROVEDBallot%20Questions%20Handout%20Print.pdf" title="SD SOS 2026 ballot question pamphlet">[2]</a></sup>.</p><p><b>Candidates:</b> No candidate position found (Jackley: AG explanation only).</p>
-<h3>Amendment K: Unclaimed-property trust fund</h3><p><b>A “Yes” vote:</b> Creates a constitutional trust fund for unclaimed-property proceeds; part of its earnings go to the general fund <sup><a href="https://www.sdpb.org/politics/2026-05-20/ag-releases-final-ballot-explanations-for-2026-constitutional-amendments" title="SDPB, AG final ballot explanations, May 20, 2026">[1]</a><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Election%20Assets/Election%20Information/FINALAPPROVEDBallot%20Questions%20Handout%20Print.pdf" title="SD SOS 2026 ballot question pamphlet">[2]</a></sup>.</p><p><b>A “No” vote:</b> No constitutional trust fund created <sup><a href="https://www.sdpb.org/politics/2026-05-20/ag-releases-final-ballot-explanations-for-2026-constitutional-amendments" title="SDPB, AG final ballot explanations, May 20, 2026">[1]</a><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Election%20Assets/Election%20Information/FINALAPPROVEDBallot%20Questions%20Handout%20Print.pdf" title="SD SOS 2026 ballot question pamphlet">[2]</a></sup>.</p><p><b>Candidates:</b> No candidate position found (Jackley: AG explanation only).</p><p class="sg-muted">Also: <a href="https://southdakotasearchlight.com/2026/10/15/amendment-k-lawmakers-ask-voters-to-approve-investing-unclaimed-property-proceeds-in-a-trust-fund/">Oct. 15 Searchlight explainer on the unclaimed-property trust fund (no candidate quotes).</a></p>
-<h3>Amendment L: 60% threshold for amendments</h3><p><b>A “Yes” vote:</b> Future constitutional amendments would need 60% voter approval to pass <sup><a href="https://www.sdpb.org/politics/2026-05-20/ag-releases-final-ballot-explanations-for-2026-constitutional-amendments" title="SDPB, AG final ballot explanations, May 20, 2026">[1]</a><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Election%20Assets/Election%20Information/FINALAPPROVEDBallot%20Questions%20Handout%20Print.pdf" title="SD SOS 2026 ballot question pamphlet">[2]</a><a href="https://southdakotasearchlight.com/2026/10/14/protecting-the-state-constitution-or-protecting-voters-right-to-change-it-amendment-l-explained/" title="SD Searchlight, Amendment L explained, Oct. 14, 2026">[6]</a></sup>.<span class="sg-ev sg-thin">◐ Thin evidence</span><span class="sg-why">Spending figure: ~$260K Fairness Project figure is from one outlet&#x27;s reading of SOS reports (SD Searchlight, Oct. 2).</span></p><p><b>A “No” vote:</b> Current approval threshold for amendments stays as it is <sup><a href="https://www.sdpb.org/politics/2026-05-20/ag-releases-final-ballot-explanations-for-2026-constitutional-amendments" title="SDPB, AG final ballot explanations, May 20, 2026">[1]</a><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Election%20Assets/Election%20Information/FINALAPPROVEDBallot%20Questions%20Handout%20Print.pdf" title="SD SOS 2026 ballot question pamphlet">[2]</a></sup>.</p><p><b>Candidates:</b> No candidate position found. Fairness Project ~$260K opposing so far (Oct. 14) <sup><a href="https://southdakotasearchlight.com/2026/10/14/protecting-the-state-constitution-or-protecting-voters-right-to-change-it-amendment-l-explained/" title="SD Searchlight, Amendment L explained, Oct. 14, 2026">[6]</a><a href="https://southdakotasearchlight.com/2026/10/02/money-begins-to-flow-in-fight-over-threshold-for-south-dakota-constitutional-changes/" title="SD Searchlight, money in Amendment L fight, Oct. 2, 2026">[7]</a></sup>.</p>
+<h3>Amendment I: Medicaid expansion trigger</h3><p><b>A “Yes” vote:</b> Adds a condition: the expansion requirement applies only while the federal share stays at 90% or more. Disputed effect: AG Jackley's explanation says expansion ends automatically below 90%; sponsor Rep. Mortenson (R) and Lt. Gov. Venhuizen say the decision goes back to lawmakers <sup><a href="https://kfgo.com/2026/09/18/sd-ballot-measure-could-auto-repeal-medicaid-expansion-attorney-general-says-in-contrast-to-lawmakers/" title="KFGO/Searchlight, Amendment I dispute, Sept. 18, 2026">[3]</a><a href="https://southdakotasearchlight.com/2026/10/14/podcast-pros-and-cons-on-a-ballot-question-that-could-repeal-sds-medicaid-expansion-requirement/" title="SD Searchlight podcast, Amendment I pros/cons, Oct. 14, 2026">[4]</a></sup>.<span class="sg-ev sg-thin">◐ Thin evidence</span><span class="sg-why">Effect is disputed: The AG&#x27;s official explanation and the legislative sponsors disagree on whether expansion ends automatically. Both views are on record; no court ruling.</span><span class="sg-ev sg-thin">◐ Thin evidence</span><span class="sg-why">Both sides · Yes: $36 million per 10%: Sponsor estimate; no official fiscal note was printed. A rough check from LRC&#x27;s June 2026 data (about $37.9 million of expansion spending that month, roughly $455 million a year) suggests closer to $45 million.</span><span class="sg-ev sg-thin">◐ Thin evidence</span><span class="sg-why">Both sides · No: $400 million a year to providers: SDAHO&#x27;s own figure, reported by SD Searchlight; not from an official state source.</span></p><p><b>A “No” vote:</b> Expanded Medicaid stays in the constitution without this trigger <sup><a href="https://www.sdpb.org/politics/2026-05-20/ag-releases-final-ballot-explanations-for-2026-constitutional-amendments" title="SDPB, AG final ballot explanations, May 20, 2026">[1]</a><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Election%20Assets/Election%20Information/FINALAPPROVEDBallot%20Questions%20Handout%20Print.pdf" title="SD SOS 2026 ballot question pamphlet">[2]</a></sup>.</p><p><b>Candidates:</b> Rhoden defended it; Ahlers opposes ("a cop out"); Jackley wrote ballot explanation, no personal position; Rounds, Bengs, Gronli: Not found <sup><a href="https://www.dakotanewsnow.com/2026/09/07/rhoden-ahlers-debate-south-dakotas-success-agriculture/" title="Dakota News Now, governor debate, Sept. 7, 2026">[5]</a></sup>.</p><div class="sg-bs"><p><b>Both sides</b> <span class="sg-muted">(official pamphlet Pro/Con first, then named supporters and opponents in news coverage; neutral colors)</span></p><div class="sg-bs-grid"><div class="sg-yes"><b>For a YES vote</b><br><span class="sg-muted">Official Pro statement: Lt. Gov. Tony Venhuizen, Sen. Casey Crabtree and Rep. Will Mortenson (the prime sponsors). No ballot question committee supports Yes. Venhuizen says supporters have raised and spent no money, so none is required.<sup><a href="https://www.aol.com/articles/3-4-ballot-measures-don-182504000.html" title="KELOLAND News (Bob Mercer), “3 of the 4 ballot measures don’t have ‘vote yes’ committees,” Oct. 12, 2026 (via AOL)">[6]</a></sup></span><ul><li>Nothing changes as long as Washington keeps paying its 90% share of expansion costs. <span class="sg-muted">(Pro statement)</span><sup><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Ballot%20Question%20Information/2026%20Ballot%20Question%20Files/2026%20BQ/2026GeneralBQPamphletFINAL.pdf" title="SOS 2026 Ballot Question Pamphlet (official Pro/Con statements, AG title and explanation)">[1]</a></sup></li><li>Each 10% of expansion costs shifted to South Dakota would cost the state about $36 million a year, which could mean higher taxes or cuts elsewhere. <span class="sg-muted">(Pro statement; sponsor estimate)</span><sup><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Ballot%20Question%20Information/2026%20Ballot%20Question%20Files/2026%20BQ/2026GeneralBQPamphletFINAL.pdf" title="SOS 2026 Ballot Question Pamphlet (official Pro/Con statements, AG title and explanation)">[1]</a><a href="https://southdakotasearchlight.com/2026/09/18/ballot-measure-could-auto-repeal-medicaid-expansion-attorney-general-says-in-contrast-to-lawmakers/" title="SD Searchlight, “Ballot measure could auto-repeal Medicaid expansion, attorney general says in contrast to lawmakers,” Sept. 18, 2026">[2]</a></sup><span class="sg-ev sg-thin">◐ Thin evidence</span><span class="sg-why">$36 million per 10%: Sponsor estimate; no official fiscal note was printed. A rough check from LRC&#x27;s June 2026 data (about $37.9 million of expansion spending that month, roughly $455 million a year) suggests closer to $45 million.</span></li><li>If federal money drops, expansion for able-bodied, working-age adults shouldn&#x27;t automatically come ahead of schools, law enforcement, nursing homes and disability services. <span class="sg-muted">(Pro statement; Mortenson: “whether able-bodied people receiving welfare is a higher priority than, say, K-12 education”)</span><sup><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Ballot%20Question%20Information/2026%20Ballot%20Question%20Files/2026%20BQ/2026GeneralBQPamphletFINAL.pdf" title="SOS 2026 Ballot Question Pamphlet (official Pro/Con statements, AG title and explanation)">[1]</a><a href="https://southdakotasearchlight.com/2026/09/29/passing-medicaid-ballot-measure-would-reduce-services-and-spike-insurance-costs-opponents-say/" title="SD Searchlight, “Passing Medicaid ballot measure would reduce services and spike insurance costs, opponents say,” Sept. 29, 2026">[3]</a></sup></li><li>It removes the constitutional mandate rather than ending expansion: legislators and voters would decide whether to keep it, and the state ran Medicaid for more than 50 years without it in the constitution. <span class="sg-muted">(Pro statement; Venhuizen and Mortenson say the effect is not automatic)</span><sup><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Ballot%20Question%20Information/2026%20Ballot%20Question%20Files/2026%20BQ/2026GeneralBQPamphletFINAL.pdf" title="SOS 2026 Ballot Question Pamphlet (official Pro/Con statements, AG title and explanation)">[1]</a><a href="https://southdakotasearchlight.com/2026/09/18/ballot-measure-could-auto-repeal-medicaid-expansion-attorney-general-says-in-contrast-to-lawmakers/" title="SD Searchlight, “Ballot measure could auto-repeal Medicaid expansion, attorney general says in contrast to lawmakers,” Sept. 18, 2026">[2]</a></sup></li><li>South Dakotans made the expansion decision, and if Washington changes the deal they should make the next decision too. <span class="sg-muted">(Pro statement)</span><sup><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Ballot%20Question%20Information/2026%20Ballot%20Question%20Files/2026%20BQ/2026GeneralBQPamphletFINAL.pdf" title="SOS 2026 Ballot Question Pamphlet (official Pro/Con statements, AG title and explanation)">[1]</a></sup></li></ul></div><div class="sg-no"><b>For a NO vote</b><br><span class="sg-muted">Official Con statement: Deb Fischer-Clemens, RN, president of the SD Nurses Association, who chairs the No on I committee. Also: AARP South Dakota (state director Erik Gaikowski), SD Association of Healthcare Organizations (president Tim Rave) and former GOP budget chair Jean Hunhoff, who helps lead the No on I coalition.<sup><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Ballot%20Question%20Information/2026%20Ballot%20Question%20Files/2026%20BQ/2026GeneralBQPamphletFINAL.pdf" title="SOS 2026 Ballot Question Pamphlet (official Pro/Con statements, AG title and explanation)">[1]</a><a href="https://southdakotasearchlight.com/2026/09/29/passing-medicaid-ballot-measure-would-reduce-services-and-spike-insurance-costs-opponents-say/" title="SD Searchlight, “Passing Medicaid ballot measure would reduce services and spike insurance costs, opponents say,” Sept. 29, 2026">[3]</a><a href="https://www.aarp.org/states/south-dakota/south-dakota-voters-said-yes-to-health-care-amendment-i-would-say-no/" title="AARP South Dakota, “South Dakota Voters Said Yes to Health Care. Amendment I Would Say No.,” Oct. 9, 2026">[5]</a><a href="https://www.aol.com/articles/3-4-ballot-measures-don-182504000.html" title="KELOLAND News (Bob Mercer), “3 of the 4 ballot measures don’t have ‘vote yes’ committees,” Oct. 12, 2026 (via AOL)">[6]</a></sup></span><ul><li>A No vote protects the 2022 voter-approved expansion, which covered 31,365 South Dakotans in June 2026. <span class="sg-muted">(Con statement (Fischer-Clemens); enrollment from LRC)</span><sup><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Ballot%20Question%20Information/2026%20Ballot%20Question%20Files/2026%20BQ/2026GeneralBQPamphletFINAL.pdf" title="SOS 2026 Ballot Question Pamphlet (official Pro/Con statements, AG title and explanation)">[1]</a><a href="https://mylrc.sdlegislature.gov/api/Documents/MedicalEligibles/307512.pdf?Year=2026" title="SD Legislative Research Council, Medical Services Data and Trends, June 2026 (expansion enrollment 31,365)">[4]</a></sup></li><li>A federal funding change could end coverage automatically; the Attorney General&#x27;s ballot title says the amendment “Repeals Expanded Medicaid Coverage.” <span class="sg-muted">(AG ballot title; AARP&#x27;s Gaikowski; SDAHO&#x27;s Rave)</span><sup><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Ballot%20Question%20Information/2026%20Ballot%20Question%20Files/2026%20BQ/2026GeneralBQPamphletFINAL.pdf" title="SOS 2026 Ballot Question Pamphlet (official Pro/Con statements, AG title and explanation)">[1]</a><a href="https://southdakotasearchlight.com/2026/09/18/ballot-measure-could-auto-repeal-medicaid-expansion-attorney-general-says-in-contrast-to-lawmakers/" title="SD Searchlight, “Ballot measure could auto-repeal Medicaid expansion, attorney general says in contrast to lawmakers,” Sept. 18, 2026">[2]</a><a href="https://www.aarp.org/states/south-dakota/south-dakota-voters-said-yes-to-health-care-amendment-i-would-say-no/" title="AARP South Dakota, “South Dakota Voters Said Yes to Health Care. Amendment I Would Say No.,” Oct. 9, 2026">[5]</a></sup></li><li>Hospitals must treat uninsured patients, so losing the roughly $400 million a year expansion pays providers would shift costs to others and strain rural services. <span class="sg-muted">(Rave, SDAHO figure; Hunhoff)</span><sup><a href="https://southdakotasearchlight.com/2026/09/18/ballot-measure-could-auto-repeal-medicaid-expansion-attorney-general-says-in-contrast-to-lawmakers/" title="SD Searchlight, “Ballot measure could auto-repeal Medicaid expansion, attorney general says in contrast to lawmakers,” Sept. 18, 2026">[2]</a><a href="https://southdakotasearchlight.com/2026/09/29/passing-medicaid-ballot-measure-would-reduce-services-and-spike-insurance-costs-opponents-say/" title="SD Searchlight, “Passing Medicaid ballot measure would reduce services and spike insurance costs, opponents say,” Sept. 29, 2026">[3]</a></sup><span class="sg-ev sg-thin">◐ Thin evidence</span><span class="sg-why">$400 million a year to providers: SDAHO&#x27;s own figure, reported by SD Searchlight; not from an official state source.</span></li><li>Preventive care through Medicaid heads off costlier emergency-room visits and surgeries later. <span class="sg-muted">(Fischer-Clemens)</span><sup><a href="https://southdakotasearchlight.com/2026/09/18/ballot-measure-could-auto-repeal-medicaid-expansion-attorney-general-says-in-contrast-to-lawmakers/" title="SD Searchlight, “Ballot measure could auto-repeal Medicaid expansion, attorney general says in contrast to lawmakers,” Sept. 18, 2026">[2]</a><a href="https://southdakotasearchlight.com/2026/09/29/passing-medicaid-ballot-measure-would-reduce-services-and-spike-insurance-costs-opponents-say/" title="SD Searchlight, “Passing Medicaid ballot measure would reduce services and spike insurance costs, opponents say,” Sept. 29, 2026">[3]</a></sup></li><li>Voters already decided this in 2022, and that decision should stand. <span class="sg-muted">(AARP&#x27;s Gaikowski; Con statement)</span><sup><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Ballot%20Question%20Information/2026%20Ballot%20Question%20Files/2026%20BQ/2026GeneralBQPamphletFINAL.pdf" title="SOS 2026 Ballot Question Pamphlet (official Pro/Con statements, AG title and explanation)">[1]</a><a href="https://www.aarp.org/states/south-dakota/south-dakota-voters-said-yes-to-health-care-amendment-i-would-say-no/" title="AARP South Dakota, “South Dakota Voters Said Yes to Health Care. Amendment I Would Say No.,” Oct. 9, 2026">[5]</a></sup></li></ul></div></div><p class="sg-w"><b>Watch-outs:</b></p><ul><li>Whether the cutoff is automatic is the core dispute and is untested: the AG&#x27;s title and explanation say expansion ends, the sponsors call that “100% inaccurate,” and no court has ruled.<sup><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Ballot%20Question%20Information/2026%20Ballot%20Question%20Files/2026%20BQ/2026GeneralBQPamphletFINAL.pdf" title="SOS 2026 Ballot Question Pamphlet (official Pro/Con statements, AG title and explanation)">[1]</a><a href="https://southdakotasearchlight.com/2026/09/18/ballot-measure-could-auto-repeal-medicaid-expansion-attorney-general-says-in-contrast-to-lawmakers/" title="SD Searchlight, “Ballot measure could auto-repeal Medicaid expansion, attorney general says in contrast to lawmakers,” Sept. 18, 2026">[2]</a></sup></li><li>Claims that a Yes vote would instantly drop 30,000 people are overstated: nothing changes unless the federal share falls below 90%, which has not happened.<sup><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Ballot%20Question%20Information/2026%20Ballot%20Question%20Files/2026%20BQ/2026GeneralBQPamphletFINAL.pdf" title="SOS 2026 Ballot Question Pamphlet (official Pro/Con statements, AG title and explanation)">[1]</a></sup></li><li>The $36 million figure is a sponsor estimate, not an official fiscal note; a rough check from LRC June 2026 data suggests about $45 million per 10%.<sup><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Ballot%20Question%20Information/2026%20Ballot%20Question%20Files/2026%20BQ/2026GeneralBQPamphletFINAL.pdf" title="SOS 2026 Ballot Question Pamphlet (official Pro/Con statements, AG title and explanation)">[1]</a><a href="https://mylrc.sdlegislature.gov/api/Documents/MedicalEligibles/307512.pdf?Year=2026" title="SD Legislative Research Council, Medical Services Data and Trends, June 2026 (expansion enrollment 31,365)">[4]</a></sup></li><li>The “about $40,000 for a family of four” income limit quoted in coverage is outdated: 138% of the 2026 federal poverty guideline is $45,540.<sup><a href="https://southdakotasearchlight.com/2026/09/18/ballot-measure-could-auto-repeal-medicaid-expansion-attorney-general-says-in-contrast-to-lawmakers/" title="SD Searchlight, “Ballot measure could auto-repeal Medicaid expansion, attorney general says in contrast to lawmakers,” Sept. 18, 2026">[2]</a><a href="https://www.govinfo.gov/content/pkg/FR-2026-01-15/html/2026-00755.htm" title="Federal Register, 2026 HHS Poverty Guidelines (Jan. 15, 2026): $15,960 for one person, $33,000 for a family of four">[7]</a></sup></li><li>The Con statement&#x27;s “$22,00 per year” is a misprint; 138% of the 2026 guideline for one person is $22,025.<sup><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Ballot%20Question%20Information/2026%20Ballot%20Question%20Files/2026%20BQ/2026GeneralBQPamphletFINAL.pdf" title="SOS 2026 Ballot Question Pamphlet (official Pro/Con statements, AG title and explanation)">[1]</a><a href="https://www.govinfo.gov/content/pkg/FR-2026-01-15/html/2026-00755.htm" title="Federal Register, 2026 HHS Poverty Guidelines (Jan. 15, 2026): $15,960 for one person, $33,000 for a family of four">[7]</a></sup></li><li>Only the No side has a registered ballot question committee.<sup><a href="https://www.aol.com/articles/3-4-ballot-measures-don-182504000.html" title="KELOLAND News (Bob Mercer), “3 of the 4 ballot measures don’t have ‘vote yes’ committees,” Oct. 12, 2026 (via AOL)">[6]</a></sup></li></ul><details><summary>Both-sides sources (7)</summary><ol class="sg-src"><li><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Ballot%20Question%20Information/2026%20Ballot%20Question%20Files/2026%20BQ/2026GeneralBQPamphletFINAL.pdf">SOS 2026 Ballot Question Pamphlet (official Pro/Con statements, AG title and explanation)</a></li><li><a href="https://southdakotasearchlight.com/2026/09/18/ballot-measure-could-auto-repeal-medicaid-expansion-attorney-general-says-in-contrast-to-lawmakers/">SD Searchlight, “Ballot measure could auto-repeal Medicaid expansion, attorney general says in contrast to lawmakers,” Sept. 18, 2026</a></li><li><a href="https://southdakotasearchlight.com/2026/09/29/passing-medicaid-ballot-measure-would-reduce-services-and-spike-insurance-costs-opponents-say/">SD Searchlight, “Passing Medicaid ballot measure would reduce services and spike insurance costs, opponents say,” Sept. 29, 2026</a></li><li><a href="https://mylrc.sdlegislature.gov/api/Documents/MedicalEligibles/307512.pdf?Year=2026">SD Legislative Research Council, Medical Services Data and Trends, June 2026 (expansion enrollment 31,365)</a></li><li><a href="https://www.aarp.org/states/south-dakota/south-dakota-voters-said-yes-to-health-care-amendment-i-would-say-no/">AARP South Dakota, “South Dakota Voters Said Yes to Health Care. Amendment I Would Say No.,” Oct. 9, 2026</a></li><li><a href="https://www.aol.com/articles/3-4-ballot-measures-don-182504000.html">KELOLAND News (Bob Mercer), “3 of the 4 ballot measures don’t have ‘vote yes’ committees,” Oct. 12, 2026 (via AOL)</a></li><li><a href="https://www.govinfo.gov/content/pkg/FR-2026-01-15/html/2026-00755.htm">Federal Register, 2026 HHS Poverty Guidelines (Jan. 15, 2026): $15,960 for one person, $33,000 for a family of four</a></li></ol></details></div>
+<h3>Amendment J: Citizenship and voting</h3><p><b>A “Yes” vote:</b> States in the constitution that noncitizens cannot vote <sup><a href="https://www.sdpb.org/politics/2026-05-20/ag-releases-final-ballot-explanations-for-2026-constitutional-amendments" title="SDPB, AG final ballot explanations, May 20, 2026">[1]</a><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Election%20Assets/Election%20Information/FINALAPPROVEDBallot%20Questions%20Handout%20Print.pdf" title="SD SOS 2026 ballot question pamphlet">[2]</a></sup>.<span class="sg-ev sg-unverified">! Unverified</span><span class="sg-why">Both sides · Watch-outs: Burden of proof / timeline: Not confirmed in the statute text or other sources checked.</span><span class="sg-ev sg-thin">◐ Thin evidence</span><span class="sg-why">Both sides · Watch-outs: “Loophole” is untested: Single reference source (Ballot Explained); no primary source addresses it.</span></p><p><b>A “No” vote:</b> Constitution's voting language unchanged <sup><a href="https://www.sdpb.org/politics/2026-05-20/ag-releases-final-ballot-explanations-for-2026-constitutional-amendments" title="SDPB, AG final ballot explanations, May 20, 2026">[1]</a><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Election%20Assets/Election%20Information/FINALAPPROVEDBallot%20Questions%20Handout%20Print.pdf" title="SD SOS 2026 ballot question pamphlet">[2]</a></sup>.</p><p><b>Candidates:</b> No candidate position found (Jackley: AG explanation only).</p><div class="sg-bs"><p><b>Both sides</b> <span class="sg-muted">(official pamphlet Pro/Con first, then named supporters and opponents in news coverage; neutral colors)</span></p><div class="sg-bs-grid"><div class="sg-yes"><b>For a YES vote</b><br><span class="sg-muted">Official Pro statement: Sen. Taffy Howard, R-Rapid City (prime sponsor, with Rep. Logan Manhart). No ballot question committee for or against Amendment J.<sup><a href="https://www.aol.com/articles/3-4-ballot-measures-don-182504000.html" title="KELOLAND News (Bob Mercer), “3 of the 4 ballot measures don’t have ‘vote yes’ committees,” Oct. 12, 2026 (via AOL)">[5]</a></sup></span><ul><li>The constitution says who may vote but doesn&#x27;t explicitly bar noncitizens; J closes that “loophole” by adding noncitizenship as a third disqualification, after mental incompetence and a felony conviction. <span class="sg-muted">(Howard, Pro statement)</span><sup><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Ballot%20Question%20Information/2026%20Ballot%20Question%20Files/2026%20BQ/2026GeneralBQPamphletFINAL.pdf" title="SOS 2026 Ballot Question Pamphlet (official Pro/Con statements, AG title and explanation)">[1]</a><a href="https://southdakotasearchlight.com/2026/10/16/closing-a-loophole-or-fearmongering-about-noncitizens-voting-south-dakotas-amendment-j/" title="SD Searchlight, “Closing a ‘loophole’ or ‘fearmongering’ about noncitizens voting: South Dakota’s Amendment J,” Oct. 16, 2026">[2]</a></sup></li><li>It is better to act before a problem arises: “It&#x27;s not happening right now, but this is being proactive.” <span class="sg-muted">(Howard)</span><sup><a href="https://southdakotasearchlight.com/2026/10/16/closing-a-loophole-or-fearmongering-about-noncitizens-voting-south-dakotas-amendment-j/" title="SD Searchlight, “Closing a ‘loophole’ or ‘fearmongering’ about noncitizens voting: South Dakota’s Amendment J,” Oct. 16, 2026">[2]</a></sup></li><li>It does not change any eligible citizen&#x27;s voting rights, registration or residency rules, or election procedures. <span class="sg-muted">(Howard, Pro statement)</span><sup><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Ballot%20Question%20Information/2026%20Ballot%20Question%20Files/2026%20BQ/2026GeneralBQPamphletFINAL.pdf" title="SOS 2026 Ballot Question Pamphlet (official Pro/Con statements, AG title and explanation)">[1]</a></sup></li><li>Clear constitutional language gives South Dakotans confidence in the integrity of their elections. <span class="sg-muted">(Howard, Pro statement)</span><sup><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Ballot%20Question%20Information/2026%20Ballot%20Question%20Files/2026%20BQ/2026GeneralBQPamphletFINAL.pdf" title="SOS 2026 Ballot Question Pamphlet (official Pro/Con statements, AG title and explanation)">[1]</a></sup></li></ul></div><div class="sg-no"><b>For a NO vote</b><br><span class="sg-muted">Official Con statement: Rep. Erik Muckey, D-Sioux Falls. No organized opposition group or committee.<sup><a href="https://www.aol.com/articles/3-4-ballot-measures-don-182504000.html" title="KELOLAND News (Bob Mercer), “3 of the 4 ballot measures don’t have ‘vote yes’ committees,” Oct. 12, 2026 (via AOL)">[5]</a></sup></span><ul><li>It is redundant: the constitution already limits voting to citizens, and a 2025 state law already makes it a crime for noncitizens to vote. <span class="sg-muted">(Muckey; SD Searchlight)</span><sup><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Ballot%20Question%20Information/2026%20Ballot%20Question%20Files/2026%20BQ/2026GeneralBQPamphletFINAL.pdf" title="SOS 2026 Ballot Question Pamphlet (official Pro/Con statements, AG title and explanation)">[1]</a><a href="https://southdakotasearchlight.com/2026/10/16/closing-a-loophole-or-fearmongering-about-noncitizens-voting-south-dakotas-amendment-j/" title="SD Searchlight, “Closing a ‘loophole’ or ‘fearmongering’ about noncitizens voting: South Dakota’s Amendment J,” Oct. 16, 2026">[2]</a></sup></li><li>Combined with the 2026 voter-challenge law, it could force citizens, most often naturalized citizens, to prove their citizenship after a challenge. <span class="sg-muted">(Muckey, Con statement)</span><sup><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Ballot%20Question%20Information/2026%20Ballot%20Question%20Files/2026%20BQ/2026GeneralBQPamphletFINAL.pdf" title="SOS 2026 Ballot Question Pamphlet (official Pro/Con statements, AG title and explanation)">[1]</a><a href="https://mylrc.sdlegislature.gov/api/Documents/304839.pdf" title="2026 Senate Bill 30, enrolled (voter-eligibility challenges, SDCL 12-4-59; effective July 1, 2026)">[4]</a></sup></li><li>The 273 noncitizen registrations found in 2024 came from a state processing error; one of those people voted, in 2016, and all were canceled. <span class="sg-muted">(Con statement; Secretary of State figures via SD Searchlight)</span><sup><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Ballot%20Question%20Information/2026%20Ballot%20Question%20Files/2026%20BQ/2026GeneralBQPamphletFINAL.pdf" title="SOS 2026 Ballot Question Pamphlet (official Pro/Con statements, AG title and explanation)">[1]</a><a href="https://southdakotasearchlight.com/2026/10/16/closing-a-loophole-or-fearmongering-about-noncitizens-voting-south-dakotas-amendment-j/" title="SD Searchlight, “Closing a ‘loophole’ or ‘fearmongering’ about noncitizens voting: South Dakota’s Amendment J,” Oct. 16, 2026">[2]</a></sup></li><li>The measure amounts to “fearmongering about a group of people that aren&#x27;t voting.” <span class="sg-muted">(Muckey)</span><sup><a href="https://southdakotasearchlight.com/2026/10/16/closing-a-loophole-or-fearmongering-about-noncitizens-voting-south-dakotas-amendment-j/" title="SD Searchlight, “Closing a ‘loophole’ or ‘fearmongering’ about noncitizens voting: South Dakota’s Amendment J,” Oct. 16, 2026">[2]</a></sup></li></ul></div></div><p class="sg-w"><b>Watch-outs:</b></p><ul><li>The Pro statement calls the measure “Amendment G” three times; it is Amendment J on the ballot.<sup><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Ballot%20Question%20Information/2026%20Ballot%20Question%20Files/2026%20BQ/2026GeneralBQPamphletFINAL.pdf" title="SOS 2026 Ballot Question Pamphlet (official Pro/Con statements, AG title and explanation)">[1]</a></sup></li><li>The Con statement says “any registered voter” may challenge; under SB 30, only the Secretary of State, the county auditor, or a voter registered in the same county can.<sup><a href="https://mylrc.sdlegislature.gov/api/Documents/304839.pdf" title="2026 Senate Bill 30, enrolled (voter-eligibility challenges, SDCL 12-4-59; effective July 1, 2026)">[4]</a></sup></li><li>Challenges must be sworn, include “documented evidence” and be filed at least 90 days before an election (by Aug. 5 for Nov. 3), which narrows the warning about Election Day ballots.<sup><a href="https://southdakotasearchlight.com/2026/10/16/closing-a-loophole-or-fearmongering-about-noncitizens-voting-south-dakotas-amendment-j/" title="SD Searchlight, “Closing a ‘loophole’ or ‘fearmongering’ about noncitizens voting: South Dakota’s Amendment J,” Oct. 16, 2026">[2]</a><a href="https://mylrc.sdlegislature.gov/api/Documents/304839.pdf" title="2026 Senate Bill 30, enrolled (voter-eligibility challenges, SDCL 12-4-59; effective July 1, 2026)">[4]</a></sup></li><li>The Con statement&#x27;s claims that the burden shifts to the voter with “no clear timeline” were not checked against the full statute.<sup><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Ballot%20Question%20Information/2026%20Ballot%20Question%20Files/2026%20BQ/2026GeneralBQPamphletFINAL.pdf" title="SOS 2026 Ballot Question Pamphlet (official Pro/Con statements, AG title and explanation)">[1]</a></sup><span class="sg-ev sg-unverified">! Unverified</span><span class="sg-why">Burden of proof / timeline: Not confirmed in the statute text or other sources checked.</span></li><li>Whether a city could let noncitizens vote locally today (the “loophole”) is untested; no South Dakota court has ruled.<sup><a href="https://ballotexplained.com/measures/south-dakota/constitutional-amendment-j" title="Ballot Explained, South Dakota Constitutional Amendment J">[6]</a></sup><span class="sg-ev sg-thin">◐ Thin evidence</span><span class="sg-why">“Loophole” is untested: Single reference source (Ballot Explained); no primary source addresses it.</span></li><li>J also rewords the rest of § 2 (for example “he/his” becomes “the elector”); the AG explanation describes only the noncitizen sentence.<sup><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Ballot%20Question%20Information/2026%20Ballot%20Question%20Files/2026%20BQ/2026GeneralBQPamphletFINAL.pdf" title="SOS 2026 Ballot Question Pamphlet (official Pro/Con statements, AG title and explanation)">[1]</a><a href="https://mylrc.sdlegislature.gov/api/Documents/284225.pdf" title="SJR 503 enrolled text (mylrc.sdlegislature.gov)">[7]</a></sup></li></ul><details><summary>Both-sides sources (7)</summary><ol class="sg-src"><li><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Ballot%20Question%20Information/2026%20Ballot%20Question%20Files/2026%20BQ/2026GeneralBQPamphletFINAL.pdf">SOS 2026 Ballot Question Pamphlet (official Pro/Con statements, AG title and explanation)</a></li><li><a href="https://southdakotasearchlight.com/2026/10/16/closing-a-loophole-or-fearmongering-about-noncitizens-voting-south-dakotas-amendment-j/">SD Searchlight, “Closing a ‘loophole’ or ‘fearmongering’ about noncitizens voting: South Dakota’s Amendment J,” Oct. 16, 2026</a></li><li><a href="https://southdakotasearchlight.com/2026/09/25/podcast-pro-and-con-voices-on-amendment-j-clarifying-the-citizenship-requirement-for-voting/">SD Searchlight podcast, Amendment J pro and con, Sept. 25, 2026</a></li><li><a href="https://mylrc.sdlegislature.gov/api/Documents/304839.pdf">2026 Senate Bill 30, enrolled (voter-eligibility challenges, SDCL 12-4-59; effective July 1, 2026)</a></li><li><a href="https://www.aol.com/articles/3-4-ballot-measures-don-182504000.html">KELOLAND News (Bob Mercer), “3 of the 4 ballot measures don’t have ‘vote yes’ committees,” Oct. 12, 2026 (via AOL)</a></li><li><a href="https://ballotexplained.com/measures/south-dakota/constitutional-amendment-j">Ballot Explained, South Dakota Constitutional Amendment J</a></li><li><a href="https://mylrc.sdlegislature.gov/api/Documents/284225.pdf">SJR 503 enrolled text (mylrc.sdlegislature.gov)</a></li></ol></details></div>
+<h3>Amendment K: Unclaimed-property trust fund</h3><p><b>A “Yes” vote:</b> Creates a constitutional trust fund for unclaimed-property proceeds; part of its earnings go to the general fund <sup><a href="https://www.sdpb.org/politics/2026-05-20/ag-releases-final-ballot-explanations-for-2026-constitutional-amendments" title="SDPB, AG final ballot explanations, May 20, 2026">[1]</a><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Election%20Assets/Election%20Information/FINALAPPROVEDBallot%20Questions%20Handout%20Print.pdf" title="SD SOS 2026 ballot question pamphlet">[2]</a></sup>.<span class="sg-ev sg-thin">◐ Thin evidence</span><span class="sg-why">Both sides · Yes: Return figures: The Treasurer&#x27;s figures in the Pro statement; not checked against Investment Council reports.</span></p><p><b>A “No” vote:</b> No constitutional trust fund created <sup><a href="https://www.sdpb.org/politics/2026-05-20/ag-releases-final-ballot-explanations-for-2026-constitutional-amendments" title="SDPB, AG final ballot explanations, May 20, 2026">[1]</a><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Election%20Assets/Election%20Information/FINALAPPROVEDBallot%20Questions%20Handout%20Print.pdf" title="SD SOS 2026 ballot question pamphlet">[2]</a></sup>.</p><p><b>Candidates:</b> No candidate position found (Jackley: AG explanation only).</p><p class="sg-muted">Also: <a href="https://southdakotasearchlight.com/2026/10/15/amendment-k-lawmakers-ask-voters-to-approve-investing-unclaimed-property-proceeds-in-a-trust-fund/">Oct. 15 Searchlight explainer on the unclaimed-property trust fund (no candidate quotes).</a></p><div class="sg-bs"><p><b>Both sides</b> <span class="sg-muted">(official pamphlet Pro/Con first, then named supporters and opponents in news coverage; neutral colors)</span></p><div class="sg-bs-grid"><div class="sg-yes"><b>For a YES vote</b><br><span class="sg-muted">Official Pro statement: State Treasurer Josh Haeder. Prime sponsor Sen. Taffy Howard (with Rep. Chris Kassin); backed by the Bureau of Finance and Management. No ballot question committee for or against Amendment K.<sup><a href="https://southdakotasearchlight.com/2026/10/15/amendment-k-lawmakers-ask-voters-to-approve-investing-unclaimed-property-proceeds-in-a-trust-fund/" title="SD Searchlight, “Amendment K: Lawmakers ask voters to approve investing unclaimed property proceeds in a trust fund,” Oct. 15, 2026">[2]</a><a href="https://www.aol.com/articles/3-4-ballot-measures-don-182504000.html" title="KELOLAND News (Bob Mercer), “3 of the 4 ballot measures don’t have ‘vote yes’ committees,” Oct. 12, 2026 (via AOL)">[3]</a></sup></span><ul><li>Unclaimed money would sit in a permanent trust, so it is there in full when a rightful owner comes forward. <span class="sg-muted">(Haeder, Pro statement)</span><sup><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Ballot%20Question%20Information/2026%20Ballot%20Question%20Files/2026%20BQ/2026GeneralBQPamphletFINAL.pdf" title="SOS 2026 Ballot Question Pamphlet (official Pro/Con statements, AG title and explanation)">[1]</a><a href="https://southdakotasearchlight.com/2026/10/15/amendment-k-lawmakers-ask-voters-to-approve-investing-unclaimed-property-proceeds-in-a-trust-fund/" title="SD Searchlight, “Amendment K: Lawmakers ask voters to approve investing unclaimed property proceeds in a trust fund,” Oct. 15, 2026">[2]</a></sup></li><li>Only the interest would go to the state budget, giving a steady source of revenue without a new tax. <span class="sg-muted">(Haeder, Pro statement)</span><sup><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Ballot%20Question%20Information/2026%20Ballot%20Question%20Files/2026%20BQ/2026GeneralBQPamphletFINAL.pdf" title="SOS 2026 Ballot Question Pamphlet (official Pro/Con statements, AG title and explanation)">[1]</a></sup></li><li>Investment Council–managed trusts earn more: Haeder says the current temporary fund earns 3–4%, compared with 8.3% for School and Public Lands and 7.9% for Education Enhancement. <span class="sg-muted">(Haeder, Pro statement)</span><sup><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Ballot%20Question%20Information/2026%20Ballot%20Question%20Files/2026%20BQ/2026GeneralBQPamphletFINAL.pdf" title="SOS 2026 Ballot Question Pamphlet (official Pro/Con statements, AG title and explanation)">[1]</a></sup><span class="sg-ev sg-thin">◐ Thin evidence</span><span class="sg-why">Return figures: The Treasurer&#x27;s figures in the Pro statement; not checked against Investment Council reports.</span></li><li>The state has been spending unclaimed money it may someday have to repay, “technically an unfunded liability on our books.” <span class="sg-muted">(Howard)</span><sup><a href="https://southdakotasearchlight.com/2026/10/15/amendment-k-lawmakers-ask-voters-to-approve-investing-unclaimed-property-proceeds-in-a-trust-fund/" title="SD Searchlight, “Amendment K: Lawmakers ask voters to approve investing unclaimed property proceeds in a trust fund,” Oct. 15, 2026">[2]</a></sup></li><li>The money could not be diverted except to pay claims, make required returns, or by a three-fourths vote of each house. <span class="sg-muted">(Enrolled text)</span><sup><a href="https://mylrc.sdlegislature.gov/api/Documents/284191.pdf" title="SJR 505 enrolled text (mylrc.sdlegislature.gov)">[4]</a></sup></li></ul></div><div class="sg-no"><b>For a NO vote</b><br><span class="sg-muted">Official Con statement: “No statement provided.” The pamphlet prints “No statement provided” for the Con side, SD Searchlight reports that no organized opposition has surfaced, and the Legislature passed it 35–0 and 69–0. This guide does not invent arguments against it.<sup><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Ballot%20Question%20Information/2026%20Ballot%20Question%20Files/2026%20BQ/2026GeneralBQPamphletFINAL.pdf" title="SOS 2026 Ballot Question Pamphlet (official Pro/Con statements, AG title and explanation)">[1]</a><a href="https://southdakotasearchlight.com/2026/10/15/amendment-k-lawmakers-ask-voters-to-approve-investing-unclaimed-property-proceeds-in-a-trust-fund/" title="SD Searchlight, “Amendment K: Lawmakers ask voters to approve investing unclaimed property proceeds in a trust fund,” Oct. 15, 2026">[2]</a><a href="https://sdlegislature.gov/Session/Bill/25479" title="SJR 505 bill record, sdlegislature.gov (Senate 35–0, House 69–0)">[5]</a></sup></span><p class="sg-muted"><b>No organized opposition found.</b></p></div></div><p class="sg-w"><b>Watch-outs:</b></p><ul><li>The Pro statement says interest will fund “roads, schools, and other public services”; the amendment sends distributions to the general fund and doesn&#x27;t earmark them.<sup><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Ballot%20Question%20Information/2026%20Ballot%20Question%20Files/2026%20BQ/2026GeneralBQPamphletFINAL.pdf" title="SOS 2026 Ballot Question Pamphlet (official Pro/Con statements, AG title and explanation)">[1]</a><a href="https://mylrc.sdlegislature.gov/api/Documents/284191.pdf" title="SJR 505 enrolled text (mylrc.sdlegislature.gov)">[4]</a></sup></li><li>The Legislature, not the amendment, sets how much is distributed each year.<sup><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Ballot%20Question%20Information/2026%20Ballot%20Question%20Files/2026%20BQ/2026GeneralBQPamphletFINAL.pdf" title="SOS 2026 Ballot Question Pamphlet (official Pro/Con statements, AG title and explanation)">[1]</a></sup></li><li>A 2025 state law already limits how much unclaimed property the budget can use; without K, lawmakers could change that law by a simple majority.<sup><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Ballot%20Question%20Information/2026%20Ballot%20Question%20Files/2026%20BQ/2026GeneralBQPamphletFINAL.pdf" title="SOS 2026 Ballot Question Pamphlet (official Pro/Con statements, AG title and explanation)">[1]</a><a href="https://southdakotasearchlight.com/2026/10/15/amendment-k-lawmakers-ask-voters-to-approve-investing-unclaimed-property-proceeds-in-a-trust-fund/" title="SD Searchlight, “Amendment K: Lawmakers ask voters to approve investing unclaimed property proceeds in a trust fund,” Oct. 15, 2026">[2]</a></sup></li><li>Owners can claim their property at any time under either outcome.<sup><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Ballot%20Question%20Information/2026%20Ballot%20Question%20Files/2026%20BQ/2026GeneralBQPamphletFINAL.pdf" title="SOS 2026 Ballot Question Pamphlet (official Pro/Con statements, AG title and explanation)">[1]</a><a href="https://southdakotasearchlight.com/2026/10/15/amendment-k-lawmakers-ask-voters-to-approve-investing-unclaimed-property-proceeds-in-a-trust-fund/" title="SD Searchlight, “Amendment K: Lawmakers ask voters to approve investing unclaimed property proceeds in a trust fund,” Oct. 15, 2026">[2]</a></sup></li></ul><details><summary>Both-sides sources (5)</summary><ol class="sg-src"><li><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Ballot%20Question%20Information/2026%20Ballot%20Question%20Files/2026%20BQ/2026GeneralBQPamphletFINAL.pdf">SOS 2026 Ballot Question Pamphlet (official Pro/Con statements, AG title and explanation)</a></li><li><a href="https://southdakotasearchlight.com/2026/10/15/amendment-k-lawmakers-ask-voters-to-approve-investing-unclaimed-property-proceeds-in-a-trust-fund/">SD Searchlight, “Amendment K: Lawmakers ask voters to approve investing unclaimed property proceeds in a trust fund,” Oct. 15, 2026</a></li><li><a href="https://www.aol.com/articles/3-4-ballot-measures-don-182504000.html">KELOLAND News (Bob Mercer), “3 of the 4 ballot measures don’t have ‘vote yes’ committees,” Oct. 12, 2026 (via AOL)</a></li><li><a href="https://mylrc.sdlegislature.gov/api/Documents/284191.pdf">SJR 505 enrolled text (mylrc.sdlegislature.gov)</a></li><li><a href="https://sdlegislature.gov/Session/Bill/25479">SJR 505 bill record, sdlegislature.gov (Senate 35–0, House 69–0)</a></li></ol></details></div>
+<h3>Amendment L: 60% threshold for amendments</h3><p><b>A “Yes” vote:</b> Future constitutional amendments would need 60% voter approval to pass <sup><a href="https://www.sdpb.org/politics/2026-05-20/ag-releases-final-ballot-explanations-for-2026-constitutional-amendments" title="SDPB, AG final ballot explanations, May 20, 2026">[1]</a><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Election%20Assets/Election%20Information/FINALAPPROVEDBallot%20Questions%20Handout%20Print.pdf" title="SD SOS 2026 ballot question pamphlet">[2]</a><a href="https://southdakotasearchlight.com/2026/10/14/protecting-the-state-constitution-or-protecting-voters-right-to-change-it-amendment-l-explained/" title="SD Searchlight, Amendment L explained, Oct. 14, 2026">[6]</a></sup>.<span class="sg-ev sg-thin">◐ Thin evidence</span><span class="sg-why">Spending figure: ~$260K Fairness Project figure is from one outlet&#x27;s reading of SOS reports (SD Searchlight, Oct. 2).</span><span class="sg-ev sg-unverified">! Unverified</span><span class="sg-why">Both sides · Watch-outs: Out-of-state money claims: Funding claims on both sides can&#x27;t be checked until ballot-committee reports due Oct. 19.</span><span class="sg-ev sg-thin">◐ Thin evidence</span><span class="sg-why">Both sides · Watch-outs: Ad-spending figures: One side&#x27;s estimate plus one outlet&#x27;s reading of SOS filings; full reports due Oct. 19.</span></p><p><b>A “No” vote:</b> Current approval threshold for amendments stays as it is <sup><a href="https://www.sdpb.org/politics/2026-05-20/ag-releases-final-ballot-explanations-for-2026-constitutional-amendments" title="SDPB, AG final ballot explanations, May 20, 2026">[1]</a><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Election%20Assets/Election%20Information/FINALAPPROVEDBallot%20Questions%20Handout%20Print.pdf" title="SD SOS 2026 ballot question pamphlet">[2]</a></sup>.</p><p><b>Candidates:</b> No candidate position found. Fairness Project ~$260K opposing so far (Oct. 14) <sup><a href="https://southdakotasearchlight.com/2026/10/14/protecting-the-state-constitution-or-protecting-voters-right-to-change-it-amendment-l-explained/" title="SD Searchlight, Amendment L explained, Oct. 14, 2026">[6]</a><a href="https://southdakotasearchlight.com/2026/10/02/money-begins-to-flow-in-fight-over-threshold-for-south-dakota-constitutional-changes/" title="SD Searchlight, money in Amendment L fight, Oct. 2, 2026">[7]</a></sup>.</p><div class="sg-bs"><p><b>Both sides</b> <span class="sg-muted">(official pamphlet Pro/Con first, then named supporters and opponents in news coverage; neutral colors)</span></p><div class="sg-bs-grid"><div class="sg-yes"><b>For a YES vote</b><br><span class="sg-muted">Official Pro statement: Rep. John Hughes (prime sponsor), Dale Bartscher (SD Right to Life) and Nathan Sanderson (SD Retailers). Committee: Save Our South Dakota Constitution, filed by former Rep. Rhonda Milstead. Hughes lists Protecting South Dakota Kids, SD Family Voice, the SD Retailers Association and SD Right to Life as backers.<sup><a href="https://southdakotasearchlight.com/2026/10/02/money-begins-to-flow-in-fight-over-threshold-for-south-dakota-constitutional-changes/" title="SD Searchlight, “Money begins to flow in fight over threshold for South Dakota constitutional changes,” Oct. 2, 2026">[3]</a><a href="https://www.aol.com/articles/3-4-ballot-measures-don-182504000.html" title="KELOLAND News (Bob Mercer), “3 of the 4 ballot measures don’t have ‘vote yes’ committees,” Oct. 12, 2026 (via AOL)">[4]</a></sup></span><ul><li>The constitution should hold the structure and powers of government; policy belongs in ordinary laws. <span class="sg-muted">(Hughes; Pro statement)</span><sup><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Ballot%20Question%20Information/2026%20Ballot%20Question%20Files/2026%20BQ/2026GeneralBQPamphletFINAL.pdf" title="SOS 2026 Ballot Question Pamphlet (official Pro/Con statements, AG title and explanation)">[1]</a><a href="https://southdakotasearchlight.com/2026/10/14/protecting-the-state-constitution-or-protecting-voters-right-to-change-it-amendment-l-explained/" title="SD Searchlight, “Protecting the state constitution or protecting voters’ right to change it? Amendment L explained,” Oct. 14, 2026">[2]</a></sup></li><li>Only changes with broad, strong support should enter the constitution, not ones driven by “the political whims of a given election cycle.” <span class="sg-muted">(Pro statement)</span><sup><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Ballot%20Question%20Information/2026%20Ballot%20Question%20Files/2026%20BQ/2026GeneralBQPamphletFINAL.pdf" title="SOS 2026 Ballot Question Pamphlet (official Pro/Con statements, AG title and explanation)">[1]</a></sup></li><li>The U.S. Constitution is far harder to amend: it takes two-thirds of Congress plus three-fourths of the states. <span class="sg-muted">(Pro statement)</span><sup><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Ballot%20Question%20Information/2026%20Ballot%20Question%20Files/2026%20BQ/2026GeneralBQPamphletFINAL.pdf" title="SOS 2026 Ballot Question Pamphlet (official Pro/Con statements, AG title and explanation)">[1]</a></sup></li><li>Simple majorities would still pass ordinary laws; L doesn&#x27;t change the threshold for initiated measures or referred laws. <span class="sg-muted">(Pro statement; SD Searchlight)</span><sup><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Ballot%20Question%20Information/2026%20Ballot%20Question%20Files/2026%20BQ/2026GeneralBQPamphletFINAL.pdf" title="SOS 2026 Ballot Question Pamphlet (official Pro/Con statements, AG title and explanation)">[1]</a><a href="https://southdakotasearchlight.com/2026/10/02/money-begins-to-flow-in-fight-over-threshold-for-south-dakota-constitutional-changes/" title="SD Searchlight, “Money begins to flow in fight over threshold for South Dakota constitutional changes,” Oct. 2, 2026">[3]</a></sup></li><li>Recent amendments such as Medicaid expansion and recreational marijuana are policies that don&#x27;t belong in the constitution. <span class="sg-muted">(Hughes)</span><sup><a href="https://southdakotasearchlight.com/2026/10/02/money-begins-to-flow-in-fight-over-threshold-for-south-dakota-constitutional-changes/" title="SD Searchlight, “Money begins to flow in fight over threshold for South Dakota constitutional changes,” Oct. 2, 2026">[3]</a></sup></li></ul></div><div class="sg-no"><b>For a NO vote</b><br><span class="sg-muted">Official Con statement: Chase Jensen (Dakota Rural Action) and Ryan Rolfs (SD Education Association). Committees: L-No (chair, former Rep. Casey Murschel; spokesperson Zach Nistler; backers include Dakota Rural Action, the League of Women Voters of SD and SD Farmers Union) and No on Amendment L (Quincy Hanzen). The Fairness Project, a D.C. nonprofit, reported about $260,000 in communications against L.<sup><a href="https://southdakotasearchlight.com/2026/10/02/money-begins-to-flow-in-fight-over-threshold-for-south-dakota-constitutional-changes/" title="SD Searchlight, “Money begins to flow in fight over threshold for South Dakota constitutional changes,” Oct. 2, 2026">[3]</a><a href="https://www.aol.com/articles/3-4-ballot-measures-don-182504000.html" title="KELOLAND News (Bob Mercer), “3 of the 4 ballot measures don’t have ‘vote yes’ committees,” Oct. 12, 2026 (via AOL)">[4]</a></sup></span><ul><li>A minority of voters could block amendments that a clear majority supports. <span class="sg-muted">(Con statement)</span><sup><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Ballot%20Question%20Information/2026%20Ballot%20Question%20Files/2026%20BQ/2026GeneralBQPamphletFINAL.pdf" title="SOS 2026 Ballot Question Pamphlet (official Pro/Con statements, AG title and explanation)">[1]</a></sup></li><li>Voters already rejected similar ideas: Amendment X (55%) in 2018 and Amendment C in 2022. <span class="sg-muted">(Con statement; § 3 history confirms 2018)</span><sup><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Ballot%20Question%20Information/2026%20Ballot%20Question%20Files/2026%20BQ/2026GeneralBQPamphletFINAL.pdf" title="SOS 2026 Ballot Question Pamphlet (official Pro/Con statements, AG title and explanation)">[1]</a><a href="https://sdlegislature.gov/Constitution/23-3" title="SD Constitution, Art. XXIII, § 3, official history (2018 amendment rejected)">[5]</a></sup></li><li>South Dakota was the first state to give citizens direct lawmaking power, and the majority should decide (“Under God, the People Rule”). <span class="sg-muted">(Con statement)</span><sup><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Ballot%20Question%20Information/2026%20Ballot%20Question%20Files/2026%20BQ/2026GeneralBQPamphletFINAL.pdf" title="SOS 2026 Ballot Question Pamphlet (official Pro/Con statements, AG title and explanation)">[1]</a></sup></li><li>Lawmakers want to stop voter-passed amendments they dislike, such as Medicaid expansion, which citizens put on the ballot after the Legislature refused to adopt it. <span class="sg-muted">(Jensen)</span><sup><a href="https://southdakotasearchlight.com/2026/10/14/protecting-the-state-constitution-or-protecting-voters-right-to-change-it-amendment-l-explained/" title="SD Searchlight, “Protecting the state constitution or protecting voters’ right to change it? Amendment L explained,” Oct. 14, 2026">[2]</a></sup></li><li>A 60% bar makes campaigns costlier, pushing them toward wealthy out-of-state funders. <span class="sg-muted">(Nistler (L-No))</span><sup><a href="https://southdakotasearchlight.com/2026/10/02/money-begins-to-flow-in-fight-over-threshold-for-south-dakota-constitutional-changes/" title="SD Searchlight, “Money begins to flow in fight over threshold for South Dakota constitutional changes,” Oct. 2, 2026">[3]</a></sup></li></ul></div></div><p class="sg-w"><b>Watch-outs:</b></p><ul><li>The Con statement describes 2022&#x27;s Amendment C as covering “constitutional amendments with fiscal impacts”; it applied to ballot questions that raise taxes or fees or spend $10 million or more in their first five years.<sup><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Ballot%20Question%20Information/2026%20Ballot%20Question%20Files/2026%20BQ/2026GeneralBQPamphletFINAL.pdf" title="SOS 2026 Ballot Question Pamphlet (official Pro/Con statements, AG title and explanation)">[1]</a><a href="https://southdakotasearchlight.com/2026/10/14/protecting-the-state-constitution-or-protecting-voters-right-to-change-it-amendment-l-explained/" title="SD Searchlight, “Protecting the state constitution or protecting voters’ right to change it? Amendment L explained,” Oct. 14, 2026">[2]</a></sup></li><li>L-No ads said “out-of-state billionaires” are pushing L. Hughes says his committee&#x27;s money is all in-state, and a lobbyist for the Florida-based Foundation for Government Accountability, which backed the 2025 resolution, says it has given nothing to the campaign.<sup><a href="https://southdakotasearchlight.com/2026/10/02/money-begins-to-flow-in-fight-over-threshold-for-south-dakota-constitutional-changes/" title="SD Searchlight, “Money begins to flow in fight over threshold for South Dakota constitutional changes,” Oct. 2, 2026">[3]</a></sup><span class="sg-ev sg-unverified">! Unverified</span><span class="sg-why">Out-of-state money claims: Funding claims on both sides can&#x27;t be checked until ballot-committee reports due Oct. 19.</span></li><li>The pro-L side&#x27;s “at least $400,000” estimate of opponents&#x27; ad spending is its own reading of FCC invoices; Secretary of State filings so far show about $260,000 from The Fairness Project.<sup><a href="https://southdakotasearchlight.com/2026/10/02/money-begins-to-flow-in-fight-over-threshold-for-south-dakota-constitutional-changes/" title="SD Searchlight, “Money begins to flow in fight over threshold for South Dakota constitutional changes,” Oct. 2, 2026">[3]</a></sup><span class="sg-ev sg-thin">◐ Thin evidence</span><span class="sg-why">Ad-spending figures: One side&#x27;s estimate plus one outlet&#x27;s reading of SOS filings; full reports due Oct. 19.</span></li><li>“Minority rule” is a framing: under L, a minority of more than 40% could block an amendment but could not adopt one.<sup><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Ballot%20Question%20Information/2026%20Ballot%20Question%20Files/2026%20BQ/2026GeneralBQPamphletFINAL.pdf" title="SOS 2026 Ballot Question Pamphlet (official Pro/Con statements, AG title and explanation)">[1]</a></sup></li><li>L would apply to amendments the Legislature proposes as well as citizen-initiated ones.<sup><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Ballot%20Question%20Information/2026%20Ballot%20Question%20Files/2026%20BQ/2026GeneralBQPamphletFINAL.pdf" title="SOS 2026 Ballot Question Pamphlet (official Pro/Con statements, AG title and explanation)">[1]</a></sup></li></ul><details><summary>Both-sides sources (5)</summary><ol class="sg-src"><li><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Ballot%20Question%20Information/2026%20Ballot%20Question%20Files/2026%20BQ/2026GeneralBQPamphletFINAL.pdf">SOS 2026 Ballot Question Pamphlet (official Pro/Con statements, AG title and explanation)</a></li><li><a href="https://southdakotasearchlight.com/2026/10/14/protecting-the-state-constitution-or-protecting-voters-right-to-change-it-amendment-l-explained/">SD Searchlight, “Protecting the state constitution or protecting voters’ right to change it? Amendment L explained,” Oct. 14, 2026</a></li><li><a href="https://southdakotasearchlight.com/2026/10/02/money-begins-to-flow-in-fight-over-threshold-for-south-dakota-constitutional-changes/">SD Searchlight, “Money begins to flow in fight over threshold for South Dakota constitutional changes,” Oct. 2, 2026</a></li><li><a href="https://www.aol.com/articles/3-4-ballot-measures-don-182504000.html">KELOLAND News (Bob Mercer), “3 of the 4 ballot measures don’t have ‘vote yes’ committees,” Oct. 12, 2026 (via AOL)</a></li><li><a href="https://sdlegislature.gov/Constitution/23-3">SD Constitution, Art. XXIII, § 3, official history (2018 amendment rejected)</a></li></ol></details></div>
 <details><summary>Sources (7)</summary><ol class="sg-src"><li><a href="https://www.sdpb.org/politics/2026-05-20/ag-releases-final-ballot-explanations-for-2026-constitutional-amendments">SDPB, AG final ballot explanations, May 20, 2026</a></li><li><a href="https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Election%20Assets/Election%20Information/FINALAPPROVEDBallot%20Questions%20Handout%20Print.pdf">SD SOS 2026 ballot question pamphlet</a></li><li><a href="https://kfgo.com/2026/09/18/sd-ballot-measure-could-auto-repeal-medicaid-expansion-attorney-general-says-in-contrast-to-lawmakers/">KFGO/Searchlight, Amendment I dispute, Sept. 18, 2026</a></li><li><a href="https://southdakotasearchlight.com/2026/10/14/podcast-pros-and-cons-on-a-ballot-question-that-could-repeal-sds-medicaid-expansion-requirement/">SD Searchlight podcast, Amendment I pros/cons, Oct. 14, 2026</a></li><li><a href="https://www.dakotanewsnow.com/2026/09/07/rhoden-ahlers-debate-south-dakotas-success-agriculture/">Dakota News Now, governor debate, Sept. 7, 2026</a></li><li><a href="https://southdakotasearchlight.com/2026/10/14/protecting-the-state-constitution-or-protecting-voters-right-to-change-it-amendment-l-explained/">SD Searchlight, Amendment L explained, Oct. 14, 2026</a></li><li><a href="https://southdakotasearchlight.com/2026/10/02/money-begins-to-flow-in-fight-over-threshold-for-south-dakota-constitutional-changes/">SD Searchlight, money in Amendment L fight, Oct. 2, 2026</a></li></ol></details></section>
 <p class="sg-muted">South Dakota General Election, Nov 3, 2026: Candidate &amp; Amendment Guide. Nonpartisan; prepared Oct 16, 2026 from public sources. Photo credits: Wikimedia Commons / U.S. Senate (public domain or CC BY 2.0), SD Legislature and state office portraits, party announcements, SDPB courtesy photos and campaign websites. Read the official ballot wording before voting.</p></div></div><!--/STATIC-->
 <a class="skip" href="#feed">Skip to feed</a>
@@ -5245,12 +5274,13 @@ window.SD_DATA = {
    "photos": 23,
    "amendCards": 22,
    "dates": 3,
-   "amendDetails": 53
+   "amendDetails": 53,
+   "bothSides": 54
   },
-  "total": 868,
+  "total": 922,
   "levels": {
-   "thin": 66,
-   "unverified": 6
+   "thin": 71,
+   "unverified": 8
   },
   "flags": [
    {
@@ -5856,6 +5886,62 @@ window.SD_DATA = {
     "level": "thin",
     "what": "Party- or campaign-supplied photo",
     "why": "From a party announcement or a courtesy photo published by SDPB; not an independent or official image."
+   },
+   {
+    "scope": "amend",
+    "L": "I",
+    "level": "thin",
+    "what": "Both sides · Yes: $36 million per 10%",
+    "why": "Sponsor estimate; no official fiscal note was printed. A rough check from LRC's June 2026 data (about $37.9 million of expansion spending that month, roughly $455 million a year) suggests closer to $45 million.",
+    "bs": true
+   },
+   {
+    "scope": "amend",
+    "L": "I",
+    "level": "thin",
+    "what": "Both sides · No: $400 million a year to providers",
+    "why": "SDAHO's own figure, reported by SD Searchlight; not from an official state source.",
+    "bs": true
+   },
+   {
+    "scope": "amend",
+    "L": "J",
+    "level": "unverified",
+    "what": "Both sides · Watch-outs: Burden of proof / timeline",
+    "why": "Not confirmed in the statute text or other sources checked.",
+    "bs": true
+   },
+   {
+    "scope": "amend",
+    "L": "J",
+    "level": "thin",
+    "what": "Both sides · Watch-outs: “Loophole” is untested",
+    "why": "Single reference source (Ballot Explained); no primary source addresses it.",
+    "bs": true
+   },
+   {
+    "scope": "amend",
+    "L": "K",
+    "level": "thin",
+    "what": "Both sides · Yes: Return figures",
+    "why": "The Treasurer's figures in the Pro statement; not checked against Investment Council reports.",
+    "bs": true
+   },
+   {
+    "scope": "amend",
+    "L": "L",
+    "level": "unverified",
+    "what": "Both sides · Watch-outs: Out-of-state money claims",
+    "why": "Funding claims on both sides can't be checked until ballot-committee reports due Oct. 19.",
+    "bs": true
+   },
+   {
+    "scope": "amend",
+    "L": "L",
+    "level": "thin",
+    "what": "Both sides · Watch-outs: Ad-spending figures",
+    "why": "One side's estimate plus one outlet's reading of SOS filings; full reports due Oct. 19.",
+    "bs": true
    }
   ],
   "corrections": [
@@ -6239,6 +6325,33 @@ window.SD_DATA = {
    },
    {
     "scope": "amend",
+    "label": "Amendment I both sides: Mortenson quote",
+    "col": null,
+    "old": "Mortenson quote: expansion shouldn't automatically outrank schools, law enforcement, nursing homes, disability services.",
+    "new": "The schools / law enforcement / nursing homes / disability services list is from the official Pro statement; Mortenson's own quote (SD Searchlight, Sept. 29) is “whether able-bodied people receiving welfare is a higher priority than, say, K-12 education.”",
+    "src": "SOS 2026 ballot question pamphlet; SD Searchlight, Sept. 29, 2026",
+    "why": "Attribution: the quoted words in the source differ from the draft wording."
+   },
+   {
+    "scope": "amend",
+    "label": "Amendment I both sides: income limit",
+    "col": null,
+    "old": "Expansion covers families of four earning less than about $40,000 (as quoted in coverage).",
+    "new": "138% of the 2026 federal poverty guideline for a family of four is $45,540; listed as a watch-out.",
+    "src": "Federal Register, 2026 HHS Poverty Guidelines (Jan. 15, 2026)",
+    "why": "The figure quoted in news coverage predates the 2026 guidelines."
+   },
+   {
+    "scope": "amend",
+    "label": "Amendment J both sides: who can file a challenge",
+    "col": null,
+    "old": "Con statement: “any registered voter may challenge your registration.”",
+    "new": "Under SB 30 (2026) only the Secretary of State, the county auditor, or a voter registered in the same county may challenge, by sworn statement with documented evidence, at least 90 days before an election.",
+    "src": "2026 SB 30 enrolled text; SD Searchlight, Oct. 16, 2026",
+    "why": "Listed as a watch-out next to the quoted statement rather than repeated as fact."
+   },
+   {
+    "scope": "amend",
     "label": "Amendment I details: Con statement",
     "col": null,
     "old": "Only the Pro statement from the SOS pamphlet was quoted.",
@@ -6407,7 +6520,204 @@ window.SD_AMEND = {
     "u": "https://sdlegislature.gov/Constitution/21-10",
     "k": "primary"
    }
-  ]
+  ],
+  "bothSides": {
+   "sources": [
+    {
+     "t": "SOS 2026 Ballot Question Pamphlet (official Pro/Con statements, AG title and explanation)",
+     "u": "https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Ballot%20Question%20Information/2026%20Ballot%20Question%20Files/2026%20BQ/2026GeneralBQPamphletFINAL.pdf",
+     "k": "primary"
+    },
+    {
+     "t": "SD Searchlight, “Ballot measure could auto-repeal Medicaid expansion, attorney general says in contrast to lawmakers,” Sept. 18, 2026",
+     "u": "https://southdakotasearchlight.com/2026/09/18/ballot-measure-could-auto-repeal-medicaid-expansion-attorney-general-says-in-contrast-to-lawmakers/",
+     "k": "news"
+    },
+    {
+     "t": "SD Searchlight, “Passing Medicaid ballot measure would reduce services and spike insurance costs, opponents say,” Sept. 29, 2026",
+     "u": "https://southdakotasearchlight.com/2026/09/29/passing-medicaid-ballot-measure-would-reduce-services-and-spike-insurance-costs-opponents-say/",
+     "k": "news"
+    },
+    {
+     "t": "SD Legislative Research Council, Medical Services Data and Trends, June 2026 (expansion enrollment 31,365)",
+     "u": "https://mylrc.sdlegislature.gov/api/Documents/MedicalEligibles/307512.pdf?Year=2026",
+     "k": "primary"
+    },
+    {
+     "t": "AARP South Dakota, “South Dakota Voters Said Yes to Health Care. Amendment I Would Say No.,” Oct. 9, 2026",
+     "u": "https://www.aarp.org/states/south-dakota/south-dakota-voters-said-yes-to-health-care-amendment-i-would-say-no/",
+     "k": "news"
+    },
+    {
+     "t": "KELOLAND News (Bob Mercer), “3 of the 4 ballot measures don’t have ‘vote yes’ committees,” Oct. 12, 2026 (via AOL)",
+     "u": "https://www.aol.com/articles/3-4-ballot-measures-don-182504000.html",
+     "k": "news"
+    },
+    {
+     "t": "Federal Register, 2026 HHS Poverty Guidelines (Jan. 15, 2026): $15,960 for one person, $33,000 for a family of four",
+     "u": "https://www.govinfo.gov/content/pkg/FR-2026-01-15/html/2026-00755.htm",
+     "k": "primary"
+    }
+   ],
+   "yes": {
+    "who": "Official Pro statement: Lt. Gov. Tony Venhuizen, Sen. Casey Crabtree and Rep. Will Mortenson (the prime sponsors).",
+    "org": "No ballot question committee supports Yes. Venhuizen says supporters have raised and spent no money, so none is required.",
+    "org_s": [
+     6
+    ],
+    "items": [
+     {
+      "t": "Nothing changes as long as Washington keeps paying its 90% share of expansion costs.",
+      "who": "Pro statement",
+      "s": [
+       1
+      ]
+     },
+     {
+      "t": "Each 10% of expansion costs shifted to South Dakota would cost the state about $36 million a year, which could mean higher taxes or cuts elsewhere.",
+      "who": "Pro statement; sponsor estimate",
+      "s": [
+       1,
+       2
+      ],
+      "flag": {
+       "level": "thin",
+       "what": "$36 million per 10%",
+       "why": "Sponsor estimate; no official fiscal note was printed. A rough check from LRC's June 2026 data (about $37.9 million of expansion spending that month, roughly $455 million a year) suggests closer to $45 million."
+      }
+     },
+     {
+      "t": "If federal money drops, expansion for able-bodied, working-age adults shouldn't automatically come ahead of schools, law enforcement, nursing homes and disability services.",
+      "who": "Pro statement; Mortenson: “whether able-bodied people receiving welfare is a higher priority than, say, K-12 education”",
+      "s": [
+       1,
+       3
+      ]
+     },
+     {
+      "t": "It removes the constitutional mandate rather than ending expansion: legislators and voters would decide whether to keep it, and the state ran Medicaid for more than 50 years without it in the constitution.",
+      "who": "Pro statement; Venhuizen and Mortenson say the effect is not automatic",
+      "s": [
+       1,
+       2
+      ]
+     },
+     {
+      "t": "South Dakotans made the expansion decision, and if Washington changes the deal they should make the next decision too.",
+      "who": "Pro statement",
+      "s": [
+       1
+      ]
+     }
+    ]
+   },
+   "no": {
+    "who": "Official Con statement: Deb Fischer-Clemens, RN, president of the SD Nurses Association, who chairs the No on I committee. Also: AARP South Dakota (state director Erik Gaikowski), SD Association of Healthcare Organizations (president Tim Rave) and former GOP budget chair Jean Hunhoff, who helps lead the No on I coalition.",
+    "org": "",
+    "org_s": [
+     1,
+     3,
+     5,
+     6
+    ],
+    "items": [
+     {
+      "t": "A No vote protects the 2022 voter-approved expansion, which covered 31,365 South Dakotans in June 2026.",
+      "who": "Con statement (Fischer-Clemens); enrollment from LRC",
+      "s": [
+       1,
+       4
+      ]
+     },
+     {
+      "t": "A federal funding change could end coverage automatically; the Attorney General's ballot title says the amendment “Repeals Expanded Medicaid Coverage.”",
+      "who": "AG ballot title; AARP's Gaikowski; SDAHO's Rave",
+      "s": [
+       1,
+       2,
+       5
+      ]
+     },
+     {
+      "t": "Hospitals must treat uninsured patients, so losing the roughly $400 million a year expansion pays providers would shift costs to others and strain rural services.",
+      "who": "Rave, SDAHO figure; Hunhoff",
+      "s": [
+       2,
+       3
+      ],
+      "flag": {
+       "level": "thin",
+       "what": "$400 million a year to providers",
+       "why": "SDAHO's own figure, reported by SD Searchlight; not from an official state source."
+      }
+     },
+     {
+      "t": "Preventive care through Medicaid heads off costlier emergency-room visits and surgeries later.",
+      "who": "Fischer-Clemens",
+      "s": [
+       2,
+       3
+      ]
+     },
+     {
+      "t": "Voters already decided this in 2022, and that decision should stand.",
+      "who": "AARP's Gaikowski; Con statement",
+      "s": [
+       1,
+       5
+      ]
+     }
+    ]
+   },
+   "watch": [
+    {
+     "t": "Whether the cutoff is automatic is the core dispute and is untested: the AG's title and explanation say expansion ends, the sponsors call that “100% inaccurate,” and no court has ruled.",
+     "who": "",
+     "s": [
+      1,
+      2
+     ]
+    },
+    {
+     "t": "Claims that a Yes vote would instantly drop 30,000 people are overstated: nothing changes unless the federal share falls below 90%, which has not happened.",
+     "who": "",
+     "s": [
+      1
+     ]
+    },
+    {
+     "t": "The $36 million figure is a sponsor estimate, not an official fiscal note; a rough check from LRC June 2026 data suggests about $45 million per 10%.",
+     "who": "",
+     "s": [
+      1,
+      4
+     ]
+    },
+    {
+     "t": "The “about $40,000 for a family of four” income limit quoted in coverage is outdated: 138% of the 2026 federal poverty guideline is $45,540.",
+     "who": "",
+     "s": [
+      2,
+      7
+     ]
+    },
+    {
+     "t": "The Con statement's “$22,00 per year” is a misprint; 138% of the 2026 guideline for one person is $22,025.",
+     "who": "",
+     "s": [
+      1,
+      7
+     ]
+    },
+    {
+     "t": "Only the No side has a registered ballot question committee.",
+     "who": "",
+     "s": [
+      6
+     ]
+    }
+   ]
+  }
  },
  "J": {
   "topic": "Noncitizens disqualified from voting",
@@ -6564,7 +6874,180 @@ window.SD_AMEND = {
     "u": "https://www.sdnewswatch.org/south-dakota-voter-guide-primary-general-election/",
     "k": "news"
    }
-  ]
+  ],
+  "bothSides": {
+   "sources": [
+    {
+     "t": "SOS 2026 Ballot Question Pamphlet (official Pro/Con statements, AG title and explanation)",
+     "u": "https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Ballot%20Question%20Information/2026%20Ballot%20Question%20Files/2026%20BQ/2026GeneralBQPamphletFINAL.pdf",
+     "k": "primary"
+    },
+    {
+     "t": "SD Searchlight, “Closing a ‘loophole’ or ‘fearmongering’ about noncitizens voting: South Dakota’s Amendment J,” Oct. 16, 2026",
+     "u": "https://southdakotasearchlight.com/2026/10/16/closing-a-loophole-or-fearmongering-about-noncitizens-voting-south-dakotas-amendment-j/",
+     "k": "news"
+    },
+    {
+     "t": "SD Searchlight podcast, Amendment J pro and con, Sept. 25, 2026",
+     "u": "https://southdakotasearchlight.com/2026/09/25/podcast-pro-and-con-voices-on-amendment-j-clarifying-the-citizenship-requirement-for-voting/",
+     "k": "news"
+    },
+    {
+     "t": "2026 Senate Bill 30, enrolled (voter-eligibility challenges, SDCL 12-4-59; effective July 1, 2026)",
+     "u": "https://mylrc.sdlegislature.gov/api/Documents/304839.pdf",
+     "k": "primary"
+    },
+    {
+     "t": "KELOLAND News (Bob Mercer), “3 of the 4 ballot measures don’t have ‘vote yes’ committees,” Oct. 12, 2026 (via AOL)",
+     "u": "https://www.aol.com/articles/3-4-ballot-measures-don-182504000.html",
+     "k": "news"
+    },
+    {
+     "t": "Ballot Explained, South Dakota Constitutional Amendment J",
+     "u": "https://ballotexplained.com/measures/south-dakota/constitutional-amendment-j",
+     "k": "reference"
+    },
+    {
+     "t": "SJR 503 enrolled text (mylrc.sdlegislature.gov)",
+     "u": "https://mylrc.sdlegislature.gov/api/Documents/284225.pdf",
+     "k": "primary"
+    }
+   ],
+   "yes": {
+    "who": "Official Pro statement: Sen. Taffy Howard, R-Rapid City (prime sponsor, with Rep. Logan Manhart).",
+    "org": "No ballot question committee for or against Amendment J.",
+    "org_s": [
+     5
+    ],
+    "items": [
+     {
+      "t": "The constitution says who may vote but doesn't explicitly bar noncitizens; J closes that “loophole” by adding noncitizenship as a third disqualification, after mental incompetence and a felony conviction.",
+      "who": "Howard, Pro statement",
+      "s": [
+       1,
+       2
+      ]
+     },
+     {
+      "t": "It is better to act before a problem arises: “It's not happening right now, but this is being proactive.”",
+      "who": "Howard",
+      "s": [
+       2
+      ]
+     },
+     {
+      "t": "It does not change any eligible citizen's voting rights, registration or residency rules, or election procedures.",
+      "who": "Howard, Pro statement",
+      "s": [
+       1
+      ]
+     },
+     {
+      "t": "Clear constitutional language gives South Dakotans confidence in the integrity of their elections.",
+      "who": "Howard, Pro statement",
+      "s": [
+       1
+      ]
+     }
+    ]
+   },
+   "no": {
+    "who": "Official Con statement: Rep. Erik Muckey, D-Sioux Falls.",
+    "org": "No organized opposition group or committee.",
+    "org_s": [
+     5
+    ],
+    "items": [
+     {
+      "t": "It is redundant: the constitution already limits voting to citizens, and a 2025 state law already makes it a crime for noncitizens to vote.",
+      "who": "Muckey; SD Searchlight",
+      "s": [
+       1,
+       2
+      ]
+     },
+     {
+      "t": "Combined with the 2026 voter-challenge law, it could force citizens, most often naturalized citizens, to prove their citizenship after a challenge.",
+      "who": "Muckey, Con statement",
+      "s": [
+       1,
+       4
+      ]
+     },
+     {
+      "t": "The 273 noncitizen registrations found in 2024 came from a state processing error; one of those people voted, in 2016, and all were canceled.",
+      "who": "Con statement; Secretary of State figures via SD Searchlight",
+      "s": [
+       1,
+       2
+      ]
+     },
+     {
+      "t": "The measure amounts to “fearmongering about a group of people that aren't voting.”",
+      "who": "Muckey",
+      "s": [
+       2
+      ]
+     }
+    ]
+   },
+   "watch": [
+    {
+     "t": "The Pro statement calls the measure “Amendment G” three times; it is Amendment J on the ballot.",
+     "who": "",
+     "s": [
+      1
+     ]
+    },
+    {
+     "t": "The Con statement says “any registered voter” may challenge; under SB 30, only the Secretary of State, the county auditor, or a voter registered in the same county can.",
+     "who": "",
+     "s": [
+      4
+     ]
+    },
+    {
+     "t": "Challenges must be sworn, include “documented evidence” and be filed at least 90 days before an election (by Aug. 5 for Nov. 3), which narrows the warning about Election Day ballots.",
+     "who": "",
+     "s": [
+      2,
+      4
+     ]
+    },
+    {
+     "t": "The Con statement's claims that the burden shifts to the voter with “no clear timeline” were not checked against the full statute.",
+     "who": "",
+     "s": [
+      1
+     ],
+     "flag": {
+      "level": "unverified",
+      "what": "Burden of proof / timeline",
+      "why": "Not confirmed in the statute text or other sources checked."
+     }
+    },
+    {
+     "t": "Whether a city could let noncitizens vote locally today (the “loophole”) is untested; no South Dakota court has ruled.",
+     "who": "",
+     "s": [
+      6
+     ],
+     "flag": {
+      "level": "thin",
+      "what": "“Loophole” is untested",
+      "why": "Single reference source (Ballot Explained); no primary source addresses it."
+     }
+    },
+    {
+     "t": "J also rewords the rest of § 2 (for example “he/his” becomes “the elector”); the AG explanation describes only the noncitizen sentence.",
+     "who": "",
+     "s": [
+      1,
+      7
+     ]
+    }
+   ]
+  }
  },
  "K": {
   "topic": "Trust for unclaimed property fund",
@@ -6687,7 +7170,130 @@ window.SD_AMEND = {
     "u": "https://www.sdnewswatch.org/south-dakota-voter-guide-primary-general-election/",
     "k": "news"
    }
-  ]
+  ],
+  "bothSides": {
+   "sources": [
+    {
+     "t": "SOS 2026 Ballot Question Pamphlet (official Pro/Con statements, AG title and explanation)",
+     "u": "https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Ballot%20Question%20Information/2026%20Ballot%20Question%20Files/2026%20BQ/2026GeneralBQPamphletFINAL.pdf",
+     "k": "primary"
+    },
+    {
+     "t": "SD Searchlight, “Amendment K: Lawmakers ask voters to approve investing unclaimed property proceeds in a trust fund,” Oct. 15, 2026",
+     "u": "https://southdakotasearchlight.com/2026/10/15/amendment-k-lawmakers-ask-voters-to-approve-investing-unclaimed-property-proceeds-in-a-trust-fund/",
+     "k": "news"
+    },
+    {
+     "t": "KELOLAND News (Bob Mercer), “3 of the 4 ballot measures don’t have ‘vote yes’ committees,” Oct. 12, 2026 (via AOL)",
+     "u": "https://www.aol.com/articles/3-4-ballot-measures-don-182504000.html",
+     "k": "news"
+    },
+    {
+     "t": "SJR 505 enrolled text (mylrc.sdlegislature.gov)",
+     "u": "https://mylrc.sdlegislature.gov/api/Documents/284191.pdf",
+     "k": "primary"
+    },
+    {
+     "t": "SJR 505 bill record, sdlegislature.gov (Senate 35–0, House 69–0)",
+     "u": "https://sdlegislature.gov/Session/Bill/25479",
+     "k": "primary"
+    }
+   ],
+   "yes": {
+    "who": "Official Pro statement: State Treasurer Josh Haeder. Prime sponsor Sen. Taffy Howard (with Rep. Chris Kassin); backed by the Bureau of Finance and Management.",
+    "org": "No ballot question committee for or against Amendment K.",
+    "org_s": [
+     2,
+     3
+    ],
+    "items": [
+     {
+      "t": "Unclaimed money would sit in a permanent trust, so it is there in full when a rightful owner comes forward.",
+      "who": "Haeder, Pro statement",
+      "s": [
+       1,
+       2
+      ]
+     },
+     {
+      "t": "Only the interest would go to the state budget, giving a steady source of revenue without a new tax.",
+      "who": "Haeder, Pro statement",
+      "s": [
+       1
+      ]
+     },
+     {
+      "t": "Investment Council–managed trusts earn more: Haeder says the current temporary fund earns 3–4%, compared with 8.3% for School and Public Lands and 7.9% for Education Enhancement.",
+      "who": "Haeder, Pro statement",
+      "s": [
+       1
+      ],
+      "flag": {
+       "level": "thin",
+       "what": "Return figures",
+       "why": "The Treasurer's figures in the Pro statement; not checked against Investment Council reports."
+      }
+     },
+     {
+      "t": "The state has been spending unclaimed money it may someday have to repay, “technically an unfunded liability on our books.”",
+      "who": "Howard",
+      "s": [
+       2
+      ]
+     },
+     {
+      "t": "The money could not be diverted except to pay claims, make required returns, or by a three-fourths vote of each house.",
+      "who": "Enrolled text",
+      "s": [
+       4
+      ]
+     }
+    ]
+   },
+   "no": {
+    "who": "Official Con statement: “No statement provided.”",
+    "org": "The pamphlet prints “No statement provided” for the Con side, SD Searchlight reports that no organized opposition has surfaced, and the Legislature passed it 35–0 and 69–0. This guide does not invent arguments against it.",
+    "org_s": [
+     1,
+     2,
+     5
+    ],
+    "items": []
+   },
+   "watch": [
+    {
+     "t": "The Pro statement says interest will fund “roads, schools, and other public services”; the amendment sends distributions to the general fund and doesn't earmark them.",
+     "who": "",
+     "s": [
+      1,
+      4
+     ]
+    },
+    {
+     "t": "The Legislature, not the amendment, sets how much is distributed each year.",
+     "who": "",
+     "s": [
+      1
+     ]
+    },
+    {
+     "t": "A 2025 state law already limits how much unclaimed property the budget can use; without K, lawmakers could change that law by a simple majority.",
+     "who": "",
+     "s": [
+      1,
+      2
+     ]
+    },
+    {
+     "t": "Owners can claim their property at any time under either outcome.",
+     "who": "",
+     "s": [
+      1,
+      2
+     ]
+    }
+   ]
+  }
  },
  "L": {
   "topic": "60% vote to approve constitutional amendments",
@@ -6826,7 +7432,177 @@ window.SD_AMEND = {
     "u": "https://www.sdnewswatch.org/south-dakota-voter-guide-primary-general-election/",
     "k": "news"
    }
-  ]
+  ],
+  "bothSides": {
+   "sources": [
+    {
+     "t": "SOS 2026 Ballot Question Pamphlet (official Pro/Con statements, AG title and explanation)",
+     "u": "https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Election%20Information/2026%20Ballot%20Question%20Information/2026%20Ballot%20Question%20Files/2026%20BQ/2026GeneralBQPamphletFINAL.pdf",
+     "k": "primary"
+    },
+    {
+     "t": "SD Searchlight, “Protecting the state constitution or protecting voters’ right to change it? Amendment L explained,” Oct. 14, 2026",
+     "u": "https://southdakotasearchlight.com/2026/10/14/protecting-the-state-constitution-or-protecting-voters-right-to-change-it-amendment-l-explained/",
+     "k": "news"
+    },
+    {
+     "t": "SD Searchlight, “Money begins to flow in fight over threshold for South Dakota constitutional changes,” Oct. 2, 2026",
+     "u": "https://southdakotasearchlight.com/2026/10/02/money-begins-to-flow-in-fight-over-threshold-for-south-dakota-constitutional-changes/",
+     "k": "news"
+    },
+    {
+     "t": "KELOLAND News (Bob Mercer), “3 of the 4 ballot measures don’t have ‘vote yes’ committees,” Oct. 12, 2026 (via AOL)",
+     "u": "https://www.aol.com/articles/3-4-ballot-measures-don-182504000.html",
+     "k": "news"
+    },
+    {
+     "t": "SD Constitution, Art. XXIII, § 3, official history (2018 amendment rejected)",
+     "u": "https://sdlegislature.gov/Constitution/23-3",
+     "k": "primary"
+    }
+   ],
+   "yes": {
+    "who": "Official Pro statement: Rep. John Hughes (prime sponsor), Dale Bartscher (SD Right to Life) and Nathan Sanderson (SD Retailers).",
+    "org": "Committee: Save Our South Dakota Constitution, filed by former Rep. Rhonda Milstead. Hughes lists Protecting South Dakota Kids, SD Family Voice, the SD Retailers Association and SD Right to Life as backers.",
+    "org_s": [
+     3,
+     4
+    ],
+    "items": [
+     {
+      "t": "The constitution should hold the structure and powers of government; policy belongs in ordinary laws.",
+      "who": "Hughes; Pro statement",
+      "s": [
+       1,
+       2
+      ]
+     },
+     {
+      "t": "Only changes with broad, strong support should enter the constitution, not ones driven by “the political whims of a given election cycle.”",
+      "who": "Pro statement",
+      "s": [
+       1
+      ]
+     },
+     {
+      "t": "The U.S. Constitution is far harder to amend: it takes two-thirds of Congress plus three-fourths of the states.",
+      "who": "Pro statement",
+      "s": [
+       1
+      ]
+     },
+     {
+      "t": "Simple majorities would still pass ordinary laws; L doesn't change the threshold for initiated measures or referred laws.",
+      "who": "Pro statement; SD Searchlight",
+      "s": [
+       1,
+       3
+      ]
+     },
+     {
+      "t": "Recent amendments such as Medicaid expansion and recreational marijuana are policies that don't belong in the constitution.",
+      "who": "Hughes",
+      "s": [
+       3
+      ]
+     }
+    ]
+   },
+   "no": {
+    "who": "Official Con statement: Chase Jensen (Dakota Rural Action) and Ryan Rolfs (SD Education Association).",
+    "org": "Committees: L-No (chair, former Rep. Casey Murschel; spokesperson Zach Nistler; backers include Dakota Rural Action, the League of Women Voters of SD and SD Farmers Union) and No on Amendment L (Quincy Hanzen). The Fairness Project, a D.C. nonprofit, reported about $260,000 in communications against L.",
+    "org_s": [
+     3,
+     4
+    ],
+    "items": [
+     {
+      "t": "A minority of voters could block amendments that a clear majority supports.",
+      "who": "Con statement",
+      "s": [
+       1
+      ]
+     },
+     {
+      "t": "Voters already rejected similar ideas: Amendment X (55%) in 2018 and Amendment C in 2022.",
+      "who": "Con statement; § 3 history confirms 2018",
+      "s": [
+       1,
+       5
+      ]
+     },
+     {
+      "t": "South Dakota was the first state to give citizens direct lawmaking power, and the majority should decide (“Under God, the People Rule”).",
+      "who": "Con statement",
+      "s": [
+       1
+      ]
+     },
+     {
+      "t": "Lawmakers want to stop voter-passed amendments they dislike, such as Medicaid expansion, which citizens put on the ballot after the Legislature refused to adopt it.",
+      "who": "Jensen",
+      "s": [
+       2
+      ]
+     },
+     {
+      "t": "A 60% bar makes campaigns costlier, pushing them toward wealthy out-of-state funders.",
+      "who": "Nistler (L-No)",
+      "s": [
+       3
+      ]
+     }
+    ]
+   },
+   "watch": [
+    {
+     "t": "The Con statement describes 2022's Amendment C as covering “constitutional amendments with fiscal impacts”; it applied to ballot questions that raise taxes or fees or spend $10 million or more in their first five years.",
+     "who": "",
+     "s": [
+      1,
+      2
+     ]
+    },
+    {
+     "t": "L-No ads said “out-of-state billionaires” are pushing L. Hughes says his committee's money is all in-state, and a lobbyist for the Florida-based Foundation for Government Accountability, which backed the 2025 resolution, says it has given nothing to the campaign.",
+     "who": "",
+     "s": [
+      3
+     ],
+     "flag": {
+      "level": "unverified",
+      "what": "Out-of-state money claims",
+      "why": "Funding claims on both sides can't be checked until ballot-committee reports due Oct. 19."
+     }
+    },
+    {
+     "t": "The pro-L side's “at least $400,000” estimate of opponents' ad spending is its own reading of FCC invoices; Secretary of State filings so far show about $260,000 from The Fairness Project.",
+     "who": "",
+     "s": [
+      3
+     ],
+     "flag": {
+      "level": "thin",
+      "what": "Ad-spending figures",
+      "why": "One side's estimate plus one outlet's reading of SOS filings; full reports due Oct. 19."
+     }
+    },
+    {
+     "t": "“Minority rule” is a framing: under L, a minority of more than 40% could block an amendment but could not adopt one.",
+     "who": "",
+     "s": [
+      1
+     ]
+    },
+    {
+     "t": "L would apply to amendments the Legislature proposes as well as citizen-initiated ones.",
+     "who": "",
+     "s": [
+      1
+     ]
+    }
+   ]
+  }
  }
 };
 
@@ -6960,13 +7736,14 @@ window.SD_AMEND = {
     var h = '<section class="race" data-race="amend" aria-labelledby="h-amend"><div class="race-head"><div class="grow"><h2 id="h-amend">Constitutional Amendments I–L</h2></div>' +
       "<p>Plain-language summary of what a Yes or No vote does, from the AG ballot explanations and SOS pamphlet. Read the official ballot wording before voting.</p></div><div class=\"amend-grid\">";
     D.amendments.forEach(function (a) {
-      var ex = D.amendExtra[a.n], fl = evOf("amend", a.n);
+      var ex = D.amendExtra[a.n], fl = evOf("amend", a.n).filter(function (f) { return !f.bs; });
       if (state.onlyFlagged && !fl.length) return;
       h += '<article class="acard' + evClass(fl) + '"><h3><span class="num">' + esc(a.n) + "</span>" + esc(a.topic) + "</h3>" + evBadges(fl) +
         '<div class="yn"><div class="y"><b>A Yes vote</b>' + cite(a.yes, "amend") + '</div><div class="n"><b>A No vote</b>' + cite(a.no, "amend") + "</div></div>" +
         '<div class="cp"><strong>Candidate positions found:</strong> ' + cite(a.cands, "amend") + "</div>" +
         (ex ? '<div class="cp muted">Oct 15: ' + esc(ex.x) + " " + ext(ex.u, "SD Searchlight") + "</div>" : "") +
         (window.SD_AMEND && window.SD_AMEND[a.n] ? '<div class="actions"><button type="button" class="btn primary" data-amend="' + esc(a.n) + '" aria-label="Details on Amendment ' + esc(a.n) + '">Details</button>' +
+        '<button type="button" class="btn" data-amend="' + esc(a.n) + '" data-tab="sides" aria-label="Both sides of Amendment ' + esc(a.n) + '">Both sides</button>' +
         '<button type="button" class="btn" data-amend="' + esc(a.n) + '" data-tab="text" aria-label="Old vs new text of Amendment ' + esc(a.n) + '">Old vs new</button></div>' : "") + "</article>";
     });
     h += '</div><div class="panel"><h2>Amendment sources</h2><ol class="srclist">' + D.amendSources.map(function (s) { return "<li>" + ext(s.u, s.t) + "</li>"; }).join("") + "</ol></div></section>";
@@ -6999,21 +7776,25 @@ window.SD_AMEND = {
   // ---------------- modal ----------------
   var root = document.getElementById("modal-root"), modal = document.getElementById("modal"), lastFocus = null, current = null;
   var ctx = { tabs: TABS, panel: function (k) { return tabPanel(current, k); } };
-  var AM_TABS = [["what", "What it is"], ["history", "History"], ["text", "Old vs new"], ["sources", "Sources"]];
+  var AM_TABS = [["what", "What it is"], ["sides", "Both sides"], ["history", "History"], ["text", "Old vs new"], ["sources", "Sources"]];
 
   function amendPanel(L, key) {
     var d = window.SD_AMEND[L], t = d.texts, h = "";
     function row(label, body) { return '<div class="row"><h3>' + esc(label) + "</h3>" + body + "</div>"; }
     if (key === "what") {
-      if (evOf("amend", L).length) h += evOf("amend", L).map(function (f) { return '<div class="row' + evClass([f]) + '"><p>' + evBadge(f) + " <b>" + esc(f.what) + ".</b> " + esc(f.why) + "</p></div>"; }).join("");
+      var topFlags = evOf("amend", L).filter(function (f) { return !f.bs; });
+      if (topFlags.length) h += topFlags.map(function (f) { return '<div class="row' + evClass([f]) + '"><p>' + evBadge(f) + " <b>" + esc(f.what) + ".</b> " + esc(f.why) + "</p></div>"; }).join("");
       h += row("Official ballot title (Attorney General)", '<blockquote class="q">' + esc(d.agTitle) + "</blockquote>");
       h += row("Attorney General explanation (verbatim, SOS pamphlet)", d.agExplanation.map(function (p) { return '<blockquote class="q">' + esc(p) + "</blockquote>"; }).join("") +
         '<p class="muted small">' + esc(d.pages) + " Recitation: Vote “Yes” to adopt the amendment. Vote “No” to leave the Constitution as it is.</p>");
       h += row("Who put it on the ballot", "<p>" + esc(d.resolution) + ". " + esc(d.origin) + "</p>");
       h += '<div class="yn big"><div class="y"><b>A Yes vote</b>' + esc(d.yes) + '</div><div class="n"><b>A No vote</b>' + esc(d.no) + "</div></div>";
+      if (d.bothSides) h += '<p class="bs-jump"><button type="button" class="btn" data-amend="' + esc(L) + '" data-tab="sides" data-swap>See both sides: arguments for Yes and No →</button></p>';
       h += row("Fiscal note", "<p>" + esc(d.fiscal) + "</p>");
       if (d.notes.length) h += row("Worth knowing", "<ul class=\"notes\">" + d.notes.map(function (n) { return "<li>" + esc(n) + "</li>"; }).join("") + "</ul>");
       h += '<p class="muted small">The Yes/No summaries are this guide\'s plain-language reading of the official text. Quoted material is verbatim from the sources linked on the Sources tab.</p>';
+    } else if (key === "sides") {
+      h += bothSidesHTML(d.bothSides);
     } else if (key === "history") {
       h += row("Part of the Constitution it touches", "<p>" + esc(d.article) + " " + esc(d.action) + "</p>");
       h += row("When this section was first adopted", "<p>" + esc(d.firstAdopted) + "</p>");
@@ -7035,6 +7816,25 @@ window.SD_AMEND = {
         if (list.length) h += row(g[1], '<ul class="srclist">' + list.map(function (x) { return "<li>" + ext(x.u, x.t) + "</li>"; }).join("") + "</ul>");
       });
     }
+    return h;
+  }
+
+  function bothSidesHTML(b) {
+    if (!b) return '<p class="muted">No both-sides summary for this measure.</p>';
+    function cites(list) { return list && list.length ? " " + list.map(function (k) { var x = b.sources[k - 1]; return x ? '<sup><a href="' + esc(x.u) + '" target="_blank" rel="noopener noreferrer" title="' + esc(x.t) + '">[' + k + "]</a></sup>" : ""; }).join("") : ""; }
+    function item(it) {
+      var f = it.flag ? [{ level: it.flag.level, what: it.flag.what, why: it.flag.why }] : [];
+      return '<li class="' + evClass(f).trim() + '">' + esc(it.t) + (it.who ? ' <span class="bs-who">(' + esc(it.who) + ")</span>" : "") + cites(it.s) + (f.length ? " " + evBadge(f[0]) : "") + "</li>";
+    }
+    function side(cls, label, x) {
+      var org = x.org ? '<p class="bs-org">' + esc(x.org) + cites(x.org_s) + "</p>" : "";
+      var body = x.items.length ? '<ol class="bs-list">' + x.items.map(item).join("") + "</ol>" : '<p class="bs-none"><b>No organized ' + (cls === "bs-yes" ? "support" : "opposition") + " found.</b></p>";
+      return '<section class="bs-col ' + cls + '" aria-label="' + esc(label) + '"><h3 class="bs-h">' + esc(label) + '</h3><p class="bs-whoall">' + esc(x.who) + (x.org ? "" : cites(x.org_s)) + "</p>" + org + body + "</section>";
+    }
+    var h = '<p class="muted small">Strongest arguments each side makes, one neutral sentence each, with who makes them. Official Pro and Con statements from the Secretary of State\'s pamphlet come first. Listing an argument is not an endorsement. Colors are neutral, not party colors.</p>';
+    h += '<div class="bs-grid">' + side("bs-yes", "For a YES vote", b.yes) + side("bs-no", "For a NO vote", b.no) + "</div>";
+    if (b.watch && b.watch.length) h += '<div class="row bs-watch"><h3>Watch-outs: disputed or incorrect claims</h3><ul class="bs-list">' + b.watch.map(item).join("") + "</ul></div>";
+    h += '<div class="row"><h3>Sources for this section</h3><ol class="srclist bs-src">' + b.sources.map(function (x) { return "<li>" + ext(x.u, x.t) + "</li>"; }).join("") + "</ol></div>";
     return h;
   }
 
@@ -7085,7 +7885,7 @@ window.SD_AMEND = {
     } else if (key === "method") {
       var c = EV.counts, lv = EV.levels, flagged = (lv.thin || 0) + (lv.unverified || 0);
       h += '<div class="money-grid ev-grid"><div><b>' + EV.total + "</b><span>statements checked</span></div><div><b>" + (EV.total - flagged) + "</b><span>Verified</span></div><div><b>" + (lv.thin || 0) + '</b><span>Thin evidence</span></div><div><b>' + (lv.unverified || 0) + "</b><span>Unverified (labeled)</span></div><div><b>" + EV.corrections.length + "</b><span>corrections made</span></div></div>";
-      h += row("Statements checked, by area", '<table class="ev-table"><tbody>' + Object.keys(D.races).map(function (k) { return [D.races[k].title + " rows", c[k]]; }).concat([["Feed posts", c.posts], ["Header stats", c.chips], ["Profile photos", c.photos], ["Amendment cards", c.amendCards], ["Amendment details (facts outside quoted official text)", c.amendDetails], ["Key dates", c.dates]]).map(function (r) { return "<tr><td>" + esc(r[0]) + "</td><td>" + esc(r[1]) + "</td></tr>"; }).join("") + "</tbody></table>" +
+      h += row("Statements checked, by area", '<table class="ev-table"><tbody>' + Object.keys(D.races).map(function (k) { return [D.races[k].title + " rows", c[k]]; }).concat([["Feed posts", c.posts], ["Header stats", c.chips], ["Profile photos", c.photos], ["Amendment cards", c.amendCards], ["Amendment details (facts outside quoted official text)", c.amendDetails], ["Amendment both sides (arguments + watch-outs)", c.bothSides], ["Key dates", c.dates]]).map(function (r) { return "<tr><td>" + esc(r[0]) + "</td><td>" + esc(r[1]) + "</td></tr>"; }).join("") + "</tbody></table>" +
         '<p class="muted small">A “statement” is one sentence or semicolon-separated claim in a cell. “Not found” notes aren’t counted. A cell can hold several statements; a flag marks the weakest one.</p>');
       h += row("Method", "<p>" + esc(EV.method) + "</p><p>Same standard for every candidate. A flag means the evidence is weak, not that the claim is false.</p>");
     }
