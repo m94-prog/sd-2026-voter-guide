@@ -150,7 +150,7 @@ sup a{font-size:.72rem;font-weight:700;margin-left:1px}
 .m-foot{display:flex;justify-content:space-between;gap:8px;padding:10px 20px;border-top:1px solid var(--line);flex:none;flex-wrap:wrap}
 /* responsive */
 @media (max-width:1180px){.layout{grid-template-columns:minmax(0,1fr) 300px}.side-left{display:none}}
-@media (max-width:900px){.layout{grid-template-columns:1fr}.side{position:static}.side-right{order:2}.trending{max-height:none}}
+@media (max-width:900px){.layout{grid-template-columns:minmax(0,1fr)}.side{position:static}.side-right{order:2}.trending{max-height:none}}
 @media (max-width:640px){.cards,.amend-grid{grid-template-columns:1fr}.money-grid{grid-template-columns:repeat(2,1fr)}.brand{margin-right:0}.modal-root{padding:0}.modal{max-height:100vh;max-height:100dvh;height:100%;border-radius:0}.yn{grid-template-columns:1fr}}
 /* layering fixes */
 .avatar-row,.m-head{position:relative;z-index:1}
@@ -241,6 +241,36 @@ button,.chip-btn,.btn{-webkit-appearance:none;appearance:none;-webkit-tap-highli
 /* static (no-JS / Quick Look) fallback: shown until the app has rendered */
 html:not(.app-ready) .topbar,html:not(.app-ready) .layout,html:not(.app-ready) #modal-root,html:not(.app-ready) .skip{display:none!important}
 html.app-ready #static-guide{display:none!important}
+
+/* compare view on phones: keep the page at viewport width and stack each row per candidate */
+.layout>*,.feed>*{min-width:0}
+@media (max-width:900px){.compare{max-width:100%}}
+@media (max-width:640px){
+  .compare{overflow:visible;box-shadow:var(--shadow)}
+  .compare table{min-width:0;width:100%;display:block;font-size:.95rem}
+  .compare caption{display:block}
+  .compare thead{display:block;position:static}
+  .compare thead tr{display:flex;gap:8px;padding:8px 12px 10px;border-bottom:1px solid var(--line)}
+  .compare thead th{position:static;display:block;flex:1 1 0;min-width:0;padding:6px 0 6px;border-top:0}
+  .compare thead th:first-child{display:none}
+  .compare thead th .hd{gap:6px}
+  .compare thead th .hd span{min-width:0;overflow-wrap:anywhere;font-size:.9rem;line-height:1.25}
+  .compare thead img,.compare thead .avatar{width:30px;height:30px;flex:none}
+  .compare tbody{display:block}
+  .compare tr{display:block;border-top:1px solid var(--line)}
+  .compare tbody tr:first-child{border-top:0}
+  .compare td{display:block;width:auto;border-top:0;padding:4px 12px 8px;overflow-wrap:anywhere;word-break:normal}
+  .compare td.lab{width:auto;padding:9px 12px 7px;font-size:.92rem}
+  .compare td[data-who]::before{content:attr(data-who);display:block;font-weight:700;font-size:.8rem;letter-spacing:.01em;margin-bottom:1px;color:var(--muted)}
+  .compare td.c-R::before{color:var(--R)} .compare td.c-D::before{color:var(--D)} .compare td.c-I::before{color:var(--I)}
+  .compare td[data-who]+td[data-who]{border-top:1px dashed var(--line);padding-top:7px}
+  .compare td a{overflow-wrap:anywhere;word-break:break-word}
+  .compare img{max-width:100%;height:auto}
+  .compare .ev-row{display:flex;flex-wrap:wrap;gap:4px}
+  .race-head .grow{min-width:0;flex-basis:100%}
+}
+/* body scroll lock (iOS ignores overflow:hidden on body) */
+body.scroll-locked{position:fixed;left:0;right:0;width:100%;overflow:hidden}
 
 </style>
 </head>
@@ -3605,7 +3635,8 @@ window.SD_AMEND = {
     extra.concat(rows).forEach(function (r) {
       h += '<tr><td class="lab">' + esc(r.label) + "</td>" + r.cells.map(function (x, i) {
         var fl = r.flagLists ? r.flagLists[i] : evRace(race, r.label, i);
-        return '<td class="' + evClass(fl).trim() + '">' + cite(x, race) + evBadges(fl) + "</td>";
+        var who = cs[i] ? ' data-who="' + esc(cs[i].name) + '"' : "";
+        return '<td class="' + (evClass(fl) + (cs[i] ? " c-" + cs[i].party : "")).trim() + '"' + who + ">" + cite(x, race) + evBadges(fl) + "</td>";
       }).join("") + "</tr>";
     });
     return h + "</tbody></table></div>";
@@ -3712,7 +3743,7 @@ window.SD_AMEND = {
       '<div class="panels" id="panel" role="tabpanel" tabindex="0" aria-labelledby="tab-' + tab + '">' + amendPanel(L, tab) + "</div>" +
       '<div class="m-foot"><button type="button" class="btn" data-amend="' + prev + '" data-swap>← Amendment ' + prev + '</button>' +
       '<button type="button" class="btn" data-amend="' + next + '" data-swap>Amendment ' + next + " →</button></div>";
-    root.hidden = false; document.body.style.overflow = "hidden";
+    root.hidden = false; lockScroll();
     (keepFocus ? modal.querySelector(".m-close") : modal.querySelector('[aria-selected="true"]')).focus();
   }
   var EV_TABS = [["flags", "Flagged items"], ["corrections", "Corrections"], ["method", "Counts & method"]];
@@ -3758,7 +3789,7 @@ window.SD_AMEND = {
     modal.innerHTML = '<button type="button" class="m-close dark" data-close aria-label="Close evidence review">×</button>' +
       '<div class="a-head"><span class="num big ev-num" aria-hidden="true">✓</span><div><div class="muted small">Final sweep · checked ' + esc(EV.checked || "") + '</div><h2 id="m-name">Evidence review</h2></div></div>' +
       tabsHTML(EV_TABS, tab) + '<div class="panels" id="panel" role="tabpanel" tabindex="0" aria-labelledby="tab-' + tab + '">' + evPanel(tab) + "</div>";
-    root.hidden = false; document.body.style.overflow = "hidden";
+    root.hidden = false; lockScroll();
     modal.querySelector('[aria-selected="true"]').focus();
   }
   function tabsHTML(tabs, tab) {
@@ -3807,6 +3838,18 @@ window.SD_AMEND = {
 
   function opponent(c) { return D.candidates.filter(function (x) { return x.race === c.race && x.id !== c.id; })[0]; }
 
+  var lockY = null;
+  function lockScroll() {
+    if (lockY !== null) return;
+    lockY = window.pageYOffset || document.documentElement.scrollTop || 0;
+    document.body.style.top = -lockY + "px"; document.body.classList.add("scroll-locked");
+  }
+  function unlockScroll() {
+    if (lockY === null) return;
+    var y = lockY; lockY = null;
+    document.body.classList.remove("scroll-locked"); document.body.style.top = "";
+    window.scrollTo(0, y);
+  }
   function openModal(id, tab, keepFocus) {
     var c = byId[id]; if (!c) return;
     if (!keepFocus) lastFocus = document.activeElement;
@@ -3826,7 +3869,7 @@ window.SD_AMEND = {
       '<div class="m-foot"><button type="button" class="btn" data-open="' + opp.id + '" data-swap>Switch to ' + esc(opp.name) + "</button>" +
       '<button type="button" class="btn primary" data-compare-from="' + c.race + '">Compare side by side</button></div>';
     root.hidden = false;
-    document.body.style.overflow = "hidden";
+    lockScroll();
     var sel = modal.querySelector('[aria-selected="true"]');
     (keepFocus ? modal.querySelector(".m-close") : sel).focus();
   }
@@ -3839,7 +3882,7 @@ window.SD_AMEND = {
     p.setAttribute("aria-labelledby", "tab-" + key); p.innerHTML = ctx.panel(key); p.scrollTop = 0;
   }
   function closeModal() {
-    root.hidden = true; modal.innerHTML = ""; document.body.style.overflow = ""; current = null;
+    root.hidden = true; modal.innerHTML = ""; unlockScroll(); current = null;
     if (lastFocus && document.body.contains(lastFocus)) lastFocus.focus();
   }
   function focusables() {
